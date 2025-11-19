@@ -1,0 +1,19 @@
+Supplier Location,Delivery Location,Import Duty
+China,Philippines,6%
+China,USA,12%
+China,Taiwan,8%
+Japan,Philippines,9%
+Japan,USA,12%
+Japan,Taiwan,7%
+USA,Philippines,14%
+USA,USA,0%
+USA,Taiwan,10%
+India,Philippines,10%
+India,USA,10%
+India,Taiwan,9%
+Germany,Philippines,12%
+Germany,USA,12%
+Germany,Taiwan,10%
+Taiwan,Philippines,8%
+Taiwan,USA,15%
+Taiwan,Taiwan,0%

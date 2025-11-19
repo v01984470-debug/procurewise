@@ -1,0 +1,44 @@
+npm run dev
+
+install next & uvicorn
+
+In Backend... 
+python -m venv 
+base base\Scripts\activate 
+uvicorn app_entegris:app --reload --port 8001
+
+
+--------------------------------------------------------------------------------------------------------
+Q1. provide spend analytics insights for department spend and perform necessary action if required.
+
+Q2. show me the current open PRs for indirect materials and consolidate if required.
+
+Q3. for low value items, after PR is passed from finance approvers, find optimal suppliers from supplier catalogs available and create purchase orders for those items.
+
+Q4. for high value items, predict if there are any laptops under replacement in near future and consolidate with the actual demand and send RFQs for all items.
+
+
+Q5. Received quotes from all suppliers, please perform supplier evaluation and give insights on the best supplier for each RFQ.
+
+
+==========================================================================
+Expedite PO:
+analyze and suggest feasible options to expedite existing open purchase order (PO - 103916) , including associated lead time reduction and cost implication
+yes, show mw an alternate strategy.
+--------------------------------------------------
+Tariff Changes:
+suggest supplier for ITM-002 and ITM-003 procurement plan, for a factory in US location, Consider latest tariff impact for supplier's shipping from location India and China to US, considering US has increased the tariff on China to 35% and India to 30%.
+
+I forgot to mention that there is news about a trade deal between US-Japan which will come into effect after 5 days from now and will make tariff on ITM-002 to 0. Does this change our latest scenario?
+---------------------------------------------------
+Panama Canal:
+Due to Panama Canal slowdown, 15-day delays are affecting shipments to East Coast ports. Analyze shipments heading to DC3 and provide cost-benefit analysis for container rerouting.
+
+Alright, please update the PO and inform the travel planners to reroute the shipment.
+--------------------------------------------------
+
+Just Inquired from supplier, there was a delay and PO-104007 material will get delivered by tomorrow. Reason for the delay is due to heightened naval tensions in the South China Sea, following a disputed military exercise and temporary maritime restrictions imposed by Chinese authorities, currently shipping lane route from China to US is taking longer route which will increase normal transit time by 15 days. Find out which other orders could be impacted.
+
+Yes, please create an emergency PO draft with Supplier O (SUP-1015) for ITM-002, quantity 2000 units.
+
+Yes, I authorize the details, please send the email.

@@ -1,0 +1,102 @@
+Production order number,Production plan date,Production start date,Production end date,Production status,SKU,SKU desc,Customer Name,Qnty planned,Qnty produced,Production line name,Machine name,Shift,Operator name,Supervisor name,BOM ID,Material available status,Key component shortage,ETA,Planned cycle time/unit
+PO1001,20/04/25,21/04/25,23/04/25,In Progress,SKU001,Capacitor 100uF,Infineon,1360,804,Line-A,MCH-00,A,Anita Rao,Priya Sen,BOM-101,Yes,None,N/A,2.3
+PO1002,22/04/25,23/04/25,24/04/25,In Progress,SKU002,High Precision Resistor,NXP,10000,7229,Line-B,MCH-01,C,Manoj Das,Neeraj Kapoor,BOM-102,Yes,None,N/A,1.6
+PO1003,19/04/25,20/04/25,21/04/25,Completed,SKU003,Capacitor 100uF,Qualcomm,1623,1623,Line-C,MCH-02,C,Anita Rao,Neeraj Kapoor,BOM-103,Partial,ITM-003,14/05/25,2.2
+PO1004,21/04/25,22/04/25,23/04/25,Completed,SKU004,Logic Chip,Bosch,1269,1269,Line-D,MCH-03,A,Anita Rao,Sunil Mehta,BOM-104,Yes,None,N/A,2.2
+PO1005,21/04/25,22/04/25,24/04/25,Completed,SKU005,High Precision Resistor,Bosch,10000,10000,Line-A,MCH-04,A,-,Rahul Verma,BOM-105,Yes,None,N/A,1.7
+PO1006,22/04/25,23/04/25,24/04/25,In Progress,SKU006,Thermal Paste,Qualcomm,959,772,Line-B,MCH-05,C,Manoj Das,Rahul Verma,BOM-106,Yes,None,N/A,1.5
+PO1007,18/04/25,19/04/25,20/04/25,Completed,SKU007,Thermal Paste,NXP,974,974,Line-C,MCH-06,A,Ramesh Singh,Sunil Mehta,BOM-107,No,ITM-002,09/05/25,1.9
+PO1008,23/04/25,24/04/25,26/04/25,Completed,SKU008,KitchenAid Stand Mixer,NXP,1654,1654,Line-D,MCH-07,B,-,Priya Sen,BOM-108,Yes,None,N/A,2.4
+PO1009,20/04/25,21/04/25,22/04/25,In Progress,SKU009,High Precision Resistor,Bosch,10000,5325,Line-A,MCH-08,C,Manoj Das,Sunil Mehta,BOM-109,Partial,ITM-001,15/05/25,2.4
+PO1010,25/04/25,26/04/25,28/04/25,Completed,SKU010,High Precision Resistor,Qualcomm,10000,10000,Line-B,MCH-09,C,Ramesh Singh,Priya Sen,BOM-110,No,None,N/A,1.8
+PO1011,22/04/25,23/04/25,25/04/25,Completed,SKU011,Thermal Paste,Qualcomm,1863,1863,Line-C,MCH-00,C,Ramesh Singh,Priya Sen,BOM-111,Yes,None,N/A,1.7
+PO1012,20/04/25,21/04/25,23/04/25,Completed,SKU012,Capacitor 100uF,Qualcomm,1008,1008,Line-D,MCH-01,A,Anita Rao,Sunil Mehta,BOM-112,Partial,None,N/A,2.3
+PO1013,24/04/25,25/04/25,N/A,Completed,SKU013,High Precision Resistor,Qualcomm,10000,10000,Line-A,MCH-02,C,-,Neeraj Kapoor,BOM-113,No,ITM-001,07/05/25,1.8
+PO1014,19/04/25,20/04/25,22/04/25,In Progress,SKU014,KitchenAid Stand Mixer,Bosch,1525,921,Line-B,MCH-03,B,Manoj Das,Rahul Verma,BOM-114,No,ITM-004,12/05/25,2.1
+PO1015,25/04/25,26/04/25,28/04/25,Completed,SKU015,Thermal Paste,Bosch,661,661,Line-C,MCH-04,A,Anita Rao,Neeraj Kapoor,BOM-115,Yes,None,N/A,1.9
+PO1016,23/04/25,24/04/25,N/A,In Progress,SKU016,High Precision Resistor,Infineon,10000,7989,Line-D,MCH-05,B,Ramesh Singh,Neeraj Kapoor,BOM-116,Yes,None,N/A,2.4
+PO1017,19/04/25,20/04/25,22/04/25,Completed,SKU017,Logic Chip,NXP,1775,1775,Line-A,MCH-06,A,-,Rahul Verma,BOM-117,Yes,None,N/A,1.5
+PO1018,19/04/25,20/04/25,21/04/25,Completed,SKU018,KitchenAid Stand Mixer,NXP,1219,1219,Line-B,MCH-07,B,Ramesh Singh,Sunil Mehta,BOM-118,Yes,None,N/A,2.2
+PO1019,22/04/25,23/04/25,N/A,In Progress,SKU019,High Precision Resistor,Qualcomm,10000,7933,Line-C,MCH-08,C,-,Neeraj Kapoor,BOM-119,Yes,None,N/A,2.5
+PO1020,18/04/25,19/04/25,20/04/25,Completed,SKU020,Thermal Paste,NXP,514,514,Line-D,MCH-09,C,Ramesh Singh,Sunil Mehta,BOM-120,Partial,ITM-002,07/05/25,1.5
+PO1021,18/04/25,19/04/25,21/04/25,Completed,SKU021,High Precision Resistor,Qualcomm,10000,10000,Line-A,MCH-00,B,-,Rahul Verma,BOM-121,No,ITM-001,07/05/25,1.7
+PO1022,19/04/25,20/04/25,21/04/25,Completed,SKU022,High Precision Resistor,Infineon,10000,10000,Line-B,MCH-01,B,Manoj Das,Rahul Verma,BOM-122,Yes,None,N/A,2.3
+PO1023,26/04/25,27/04/25,29/04/25,In Progress,SKU023,Logic Chip,Qualcomm,918,813,Line-C,MCH-02,A,Manoj Das,Neeraj Kapoor,BOM-123,Partial,None,N/A,1.6
+PO1024,20/04/25,21/04/25,23/04/25,Completed,SKU024,Logic Chip,Bosch,540,540,Line-D,MCH-03,A,Ramesh Singh,Rahul Verma,BOM-124,Yes,None,N/A,2.4
+PO1025,18/04/25,19/04/25,21/04/25,In Progress,SKU025,Thermal Paste,Infineon,1279,851,Line-A,MCH-04,A,Ramesh Singh,Sunil Mehta,BOM-125,Yes,None,N/A,1.6
+PO1026,20/04/25,21/04/25,23/04/25,Completed,SKU026,High Precision Resistor,Infineon,10000,10000,Line-B,MCH-05,C,Ramesh Singh,Rahul Verma,BOM-126,No,ITM-001,14/05/25,2.2
+PO1027,19/04/25,20/04/25,22/04/25,Completed,SKU027,Capacitor 100uF,Bosch,1460,1460,Line-C,MCH-06,A,Manoj Das,Rahul Verma,BOM-127,No,ITM-003,09/05/25,1.6
+PO1028,24/04/25,25/04/25,26/04/25,In Progress,SKU028,KitchenAid Stand Mixer,Infineon,1528,1192,Line-D,MCH-07,A,-,Sunil Mehta,BOM-128,Yes,None,N/A,2.3
+PO1029,20/04/25,21/04/25,N/A,Completed,SKU029,Capacitor 100uF,Bosch,1294,1294,Line-A,MCH-08,A,Anita Rao,Priya Sen,BOM-129,Yes,None,N/A,2
+PO1030,17/04/25,18/04/25,20/04/25,Completed,SKU030,Logic Chip,Bosch,1391,1391,Line-B,MCH-09,C,Ramesh Singh,Neeraj Kapoor,BOM-130,Partial,ITM-005,09/05/25,1.5
+PO1031,20/04/25,21/04/25,22/04/25,In Progress,SKU031,Logic Chip,Bosch,1063,830,Line-C,MCH-00,C,Anita Rao,Priya Sen,BOM-131,Yes,None,N/A,2.2
+PO1032,22/04/25,23/04/25,24/04/25,In Progress,SKU032,Capacitor 100uF,Bosch,730,514,Line-D,MCH-01,A,Ramesh Singh,Rahul Verma,BOM-132,Yes,None,N/A,2.3
+PO1033,23/04/25,24/04/25,25/04/25,Completed,SKU033,Capacitor 100uF,Qualcomm,1683,1683,Line-A,MCH-02,C,-,Rahul Verma,BOM-133,Partial,None,N/A,2.1
+PO1034,24/04/25,25/04/25,27/04/25,Completed,SKU034,Thermal Paste,Bosch,1077,1077,Line-B,MCH-03,C,Anita Rao,Rahul Verma,BOM-134,Yes,None,N/A,2.1
+PO1035,18/04/25,19/04/25,20/04/25,Completed,SKU035,High Precision Resistor,Qualcomm,10000,10000,Line-C,MCH-04,C,Ramesh Singh,Priya Sen,BOM-135,Partial,ITM-001,12/05/25,2
+PO1036,23/04/25,24/04/25,26/04/25,In Progress,SKU036,KitchenAid Stand Mixer,Qualcomm,1854,1757,Line-D,MCH-05,A,Anita Rao,Rahul Verma,BOM-136,No,ITM-004,13/05/25,1.8
+PO1037,26/04/25,27/04/25,N/A,In Progress,SKU037,Capacitor 100uF,Qualcomm,1908,1171,Line-A,MCH-06,B,Anita Rao,Sunil Mehta,BOM-137,Partial,None,N/A,1.9
+PO1038,23/04/25,24/04/25,25/04/25,Completed,SKU038,KitchenAid Stand Mixer,NXP,1782,1782,Line-B,MCH-07,B,Manoj Das,Neeraj Kapoor,BOM-138,Yes,None,N/A,1.5
+PO1039,19/04/25,20/04/25,21/04/25,In Progress,SKU039,KitchenAid Stand Mixer,Infineon,1148,852,Line-C,MCH-08,B,Manoj Das,Rahul Verma,BOM-139,Yes,None,N/A,2.2
+PO1040,17/04/25,18/04/25,20/04/25,In Progress,SKU040,Capacitor 100uF,Bosch,1163,708,Line-D,MCH-09,A,Manoj Das,Sunil Mehta,BOM-140,No,ITM-003,12/05/25,2.1
+PO1041,23/04/25,24/04/25,25/04/25,Completed,SKU041,Capacitor 100uF,Infineon,941,941,Line-A,MCH-00,B,Anita Rao,Priya Sen,BOM-141,Yes,None,N/A,2.5
+PO1042,20/04/25,21/04/25,N/A,Completed,SKU042,Logic Chip,Bosch,1909,1909,Line-B,MCH-01,B,Ramesh Singh,Priya Sen,BOM-142,No,ITM-005,09/05/25,1.8
+PO1043,26/04/25,27/04/25,29/04/25,In Progress,SKU043,High Precision Resistor,Bosch,10000,5184,Line-C,MCH-02,C,-,Priya Sen,BOM-143,Partial,None,N/A,2.1
+PO1044,25/04/25,26/04/25,28/04/25,Completed,SKU044,Thermal Paste,NXP,1354,1354,Line-D,MCH-03,C,Anita Rao,Priya Sen,BOM-144,Yes,None,N/A,1.8
+PO1045,26/04/25,27/04/25,28/04/25,In Progress,SKU045,Capacitor 100uF,NXP,1926,1618,Line-A,MCH-04,C,Manoj Das,Rahul Verma,BOM-145,Yes,None,N/A,2
+PO1046,17/04/25,18/04/25,20/04/25,In Progress,SKU046,Logic Chip,Qualcomm,1939,1544,Line-B,MCH-05,C,Ramesh Singh,Priya Sen,BOM-146,Yes,None,N/A,1.6
+PO1047,19/04/25,20/04/25,21/04/25,In Progress,SKU047,Capacitor 100uF,Qualcomm,900,777,Line-C,MCH-06,C,Manoj Das,Neeraj Kapoor,BOM-147,Yes,None,N/A,1.9
+PO1048,23/04/25,24/04/25,26/04/25,Completed,SKU048,High Precision Resistor,NXP,10000,10000,Line-D,MCH-07,C,Ramesh Singh,Rahul Verma,BOM-148,Yes,None,N/A,2.1
+PO1049,26/04/25,27/04/25,28/04/25,In Progress,SKU049,Thermal Paste,NXP,1647,1242,Line-A,MCH-08,B,Anita Rao,Neeraj Kapoor,BOM-149,Partial,None,N/A,2.2
+PO1050,24/04/25,25/04/25,27/04/25,Completed,SKU050,High Precision Resistor,Qualcomm,10000,10000,Line-B,MCH-09,C,-,Sunil Mehta,BOM-150,Partial,ITM-001,10/05/25,1.5
+PO1051,24/04/25,25/04/25,26/04/25,Planned,SKU051,High Precision Resistor,NXP,10000,6132,Line-C,MCH-00,C,Manoj Das,Rahul Verma,BOM-151,Yes,None,N/A,2.1
+PO1052,23/04/25,24/04/25,25/04/25,In Progress,SKU052,Logic Chip,NXP,1428,997,Line-D,MCH-01,A,-,Rahul Verma,BOM-152,Yes,None,N/A,2
+PO1053,19/04/25,20/04/25,21/04/25,Completed,SKU053,Capacitor 100uF,Qualcomm,972,972,Line-A,MCH-02,B,-,Sunil Mehta,BOM-153,Partial,None,N/A,1.7
+PO1054,17/04/25,18/04/25,19/04/25,Completed,SKU054,Capacitor 100uF,Infineon,762,762,Line-B,MCH-03,A,Anita Rao,Neeraj Kapoor,BOM-154,Yes,None,N/A,2.2
+PO1055,17/04/25,18/04/25,20/04/25,Completed,SKU055,Thermal Paste,NXP,1516,1516,Line-C,MCH-04,B,-,Rahul Verma,BOM-155,Yes,None,N/A,2
+PO1056,26/04/25,27/04/25,N/A,In Progress,SKU056,KitchenAid Stand Mixer,NXP,501,273,Line-D,MCH-05,B,Ramesh Singh,Priya Sen,BOM-156,No,ITM-004,07/05/25,2.4
+PO1057,22/04/25,23/04/25,25/04/25,Completed,SKU057,KitchenAid Stand Mixer,Qualcomm,1514,1514,Line-A,MCH-06,B,Anita Rao,Priya Sen,BOM-157,Yes,None,N/A,1.8
+PO1058,24/04/25,25/04/25,26/04/25,Completed,SKU058,Capacitor 100uF,Qualcomm,1315,1315,Line-B,MCH-07,B,Anita Rao,Sunil Mehta,BOM-158,Partial,None,N/A,2.3
+PO1059,23/04/25,24/04/25,26/04/25,Completed,SKU059,High Precision Resistor,NXP,10000,10000,Line-C,MCH-08,A,-,Neeraj Kapoor,BOM-159,Yes,None,N/A,1.9
+PO1060,26/04/25,27/04/25,N/A,Completed,SKU060,Thermal Paste,Bosch,1127,1127,Line-D,MCH-09,B,Manoj Das,Rahul Verma,BOM-160,Yes,None,N/A,1.6
+PO1061,19/04/25,20/04/25,22/04/25,Completed,SKU061,High Precision Resistor,Bosch,10000,10000,Line-A,MCH-00,A,Ramesh Singh,Sunil Mehta,BOM-161,Partial,ITM-001,12/05/25,2.2
+PO1062,24/04/25,25/04/25,27/04/25,Planned,SKU062,Thermal Paste,Qualcomm,1009,839,Line-B,MCH-01,A,-,Sunil Mehta,BOM-162,Partial,ITM-002,15/05/25,1.5
+PO1063,25/04/25,26/04/25,28/04/25,Completed,SKU063,Capacitor 100uF,Infineon,1321,1321,Line-C,MCH-02,A,Manoj Das,Sunil Mehta,BOM-163,Partial,ITM-003,09/05/25,2.2
+PO1064,18/04/25,19/04/25,21/04/25,Planned,SKU064,Logic Chip,NXP,660,335,Line-D,MCH-03,C,Anita Rao,Sunil Mehta,BOM-164,Partial,None,N/A,2
+PO1065,23/04/25,24/04/25,26/04/25,In Progress,SKU065,Thermal Paste,Bosch,1915,1770,Line-A,MCH-04,C,Ramesh Singh,Sunil Mehta,BOM-165,Yes,None,N/A,2.2
+PO1066,26/04/25,27/04/25,29/04/25,Completed,SKU066,Capacitor 100uF,Bosch,959,959,Line-B,MCH-05,A,-,Rahul Verma,BOM-166,Yes,None,N/A,2
+PO1067,21/04/25,22/04/25,23/04/25,Planned,SKU067,KitchenAid Stand Mixer,Qualcomm,1545,960,Line-C,MCH-06,C,Manoj Das,Rahul Verma,BOM-167,Partial,None,N/A,2.5
+PO1068,24/04/25,25/04/25,27/04/25,In Progress,SKU068,Logic Chip,Qualcomm,1806,1295,Line-D,MCH-07,A,Manoj Das,Rahul Verma,BOM-168,Yes,None,N/A,1.9
+PO1069,26/04/25,27/04/25,29/04/25,Completed,SKU069,Logic Chip,Infineon,1378,1378,Line-A,MCH-08,B,Manoj Das,Neeraj Kapoor,BOM-169,Partial,None,N/A,2
+PO1070,22/04/25,23/04/25,25/04/25,Completed,SKU070,Capacitor 100uF,Bosch,1315,1315,Line-B,MCH-09,C,Ramesh Singh,Neeraj Kapoor,BOM-170,Yes,None,N/A,1.8
+PO1071,24/04/25,25/04/25,N/A,In Progress,SKU071,KitchenAid Stand Mixer,Qualcomm,1715,1410,Line-C,MCH-00,C,-,Rahul Verma,BOM-171,Yes,None,N/A,1.7
+PO1072,22/04/25,23/04/25,25/04/25,Completed,SKU072,Capacitor 100uF,Qualcomm,598,598,Line-D,MCH-01,B,Manoj Das,Rahul Verma,BOM-172,Yes,None,N/A,2.2
+PO1073,22/04/25,23/04/25,25/04/25,Completed,SKU073,Logic Chip,NXP,1872,1872,Line-A,MCH-02,B,Manoj Das,Priya Sen,BOM-173,Yes,None,N/A,1.9
+PO1074,22/04/25,23/04/25,24/04/25,In Progress,SKU074,Capacitor 100uF,Qualcomm,1622,1606,Line-B,MCH-03,A,Anita Rao,Rahul Verma,BOM-174,Yes,None,N/A,1.6
+PO1075,22/04/25,23/04/25,25/04/25,Completed,SKU075,Logic Chip,Infineon,1684,1684,Line-C,MCH-04,A,Manoj Das,Neeraj Kapoor,BOM-175,Yes,None,N/A,1.8
+PO1076,25/04/25,26/04/25,27/04/25,Completed,SKU076,Logic Chip,Infineon,1065,1065,Line-D,MCH-05,A,Manoj Das,Neeraj Kapoor,BOM-176,Yes,None,N/A,2.2
+PO1077,19/04/25,20/04/25,22/04/25,In Progress,SKU077,High Precision Resistor,NXP,10000,5485,Line-A,MCH-06,B,-,Priya Sen,BOM-177,Partial,None,N/A,2.1
+PO1078,21/04/25,22/04/25,23/04/25,Completed,SKU078,KitchenAid Stand Mixer,Infineon,1461,1461,Line-B,MCH-07,B,-,Sunil Mehta,BOM-178,Yes,None,N/A,1.8
+PO1079,17/04/25,18/04/25,20/04/25,In Progress,SKU079,Thermal Paste,Bosch,1284,1186,Line-C,MCH-08,A,Anita Rao,Sunil Mehta,BOM-179,Yes,None,N/A,1.6
+PO1080,21/04/25,22/04/25,24/04/25,Completed,SKU080,Logic Chip,NXP,1562,1562,Line-D,MCH-09,B,-,Priya Sen,BOM-180,Partial,ITM-005,13/05/25,1.9
+PO1081,25/04/25,26/04/25,27/04/25,Planned,SKU081,Capacitor 100uF,Infineon,907,867,Line-A,MCH-00,C,Ramesh Singh,Neeraj Kapoor,BOM-181,Yes,None,N/A,2
+PO1082,18/04/25,19/04/25,21/04/25,Completed,SKU082,High Precision Resistor,Qualcomm,10000,10000,Line-B,MCH-01,C,Ramesh Singh,Neeraj Kapoor,BOM-182,Yes,None,N/A,2.3
+PO1083,26/04/25,27/04/25,N/A,Completed,SKU083,Logic Chip,Infineon,1011,1011,Line-C,MCH-02,A,Manoj Das,Priya Sen,BOM-183,Yes,None,N/A,1.9
+PO1084,24/04/25,25/04/25,26/04/25,Completed,SKU084,Thermal Paste,NXP,1666,1666,Line-D,MCH-03,A,Anita Rao,Neeraj Kapoor,BOM-184,No,ITM-002,08/05/25,1.6
+PO1085,20/04/25,21/04/25,22/04/25,In Progress,SKU085,High Precision Resistor,Bosch,10000,5179,Line-A,MCH-04,C,Manoj Das,Rahul Verma,BOM-185,Yes,None,N/A,2
+PO1086,21/04/25,22/04/25,24/04/25,In Progress,SKU086,KitchenAid Stand Mixer,NXP,1069,550,Line-B,MCH-05,A,Ramesh Singh,Rahul Verma,BOM-186,No,None,N/A,1.5
+PO1087,21/04/25,22/04/25,23/04/25,In Progress,SKU087,High Precision Resistor,Infineon,10000,6800,Line-C,MCH-06,C,Manoj Das,Sunil Mehta,BOM-187,Yes,None,N/A,1.6
+PO1088,26/04/25,27/04/25,29/04/25,Completed,SKU088,Logic Chip,Qualcomm,1576,1576,Line-D,MCH-07,C,-,Rahul Verma,BOM-188,Partial,None,N/A,1.8
+PO1089,22/04/25,23/04/25,24/04/25,Completed,SKU089,KitchenAid Stand Mixer,Infineon,1719,1719,Line-A,MCH-08,A,Manoj Das,Rahul Verma,BOM-189,Yes,None,N/A,2.3
+PO1090,23/04/25,24/04/25,26/04/25,Completed,SKU090,KitchenAid Stand Mixer,NXP,546,546,Line-B,MCH-09,A,Manoj Das,Priya Sen,BOM-190,Partial,ITM-004,09/05/25,2.1
+PO1091,23/04/25,24/04/25,26/04/25,Planned,SKU091,KitchenAid Stand Mixer,NXP,768,582,Line-C,MCH-00,B,Ramesh Singh,Neeraj Kapoor,BOM-191,Partial,ITM-004,08/05/25,1.8
+PO1092,26/04/25,27/04/25,29/04/25,In Progress,SKU092,KitchenAid Stand Mixer,Qualcomm,1330,956,Line-D,MCH-01,B,Anita Rao,Priya Sen,BOM-192,Partial,ITM-004,09/05/25,1.6
+PO1093,22/04/25,23/04/25,25/04/25,In Progress,SKU093,High Precision Resistor,Qualcomm,10000,9813,Line-A,MCH-02,C,Anita Rao,Priya Sen,BOM-193,Yes,None,N/A,2.3
+PO1094,18/04/25,19/04/25,21/04/25,Completed,SKU094,High Precision Resistor,Infineon,10000,10000,Line-B,MCH-03,B,Ramesh Singh,Neeraj Kapoor,BOM-194,Yes,None,N/A,1.9
+PO1095,17/04/25,18/04/25,20/04/25,In Progress,SKU095,Logic Chip,NXP,1012,729,Line-C,MCH-04,B,Anita Rao,Rahul Verma,BOM-195,Partial,None,N/A,1.7
+PO1096,21/04/25,22/04/25,24/04/25,Completed,SKU096,Logic Chip,Qualcomm,987,987,Line-D,MCH-05,A,Manoj Das,Rahul Verma,BOM-196,Yes,None,N/A,2.4
+PO1097,26/04/25,27/04/25,29/04/25,In Progress,SKU097,Capacitor 100uF,Bosch,1712,1487,Line-A,MCH-06,C,-,Neeraj Kapoor,BOM-197,Partial,None,N/A,2.1
+PO1098,21/04/25,22/04/25,23/04/25,Completed,SKU098,Capacitor 100uF,NXP,746,746,Line-B,MCH-07,B,Manoj Das,Neeraj Kapoor,BOM-198,Yes,None,N/A,1.5
+PO1099,17/04/25,18/04/25,20/04/25,Completed,SKU099,KitchenAid Stand Mixer,NXP,1958,1958,Line-C,MCH-08,A,Manoj Das,Rahul Verma,BOM-199,Yes,None,N/A,2.3
+PO1100,18/04/25,19/04/25,20/04/25,In Progress,SKU100,KitchenAid Stand Mixer,NXP,1743,953,Line-D,MCH-09,A,Anita Rao,Priya Sen,BOM-200,No,ITM-004,11/05/25,1.8
+PO1101,11/06/25,12/06/25,01/07/25,In Progress,SKU007,Thermal Paste,NXP,10000,,Line-C,MCH-06,A,Ramesh Singh,Sunil Mehta,BOM-107,Yes,None,N/A,2.3

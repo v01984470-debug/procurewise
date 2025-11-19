@@ -1,0 +1,14 @@
+Item Number,Item Description,Category,Type,Classification,Qty,UoM,Stock Ownership Basis (SOB),Sloc,Country,Unit Price (USD),Valuation,Mfg Date,Expiry Date,Shelf Life,PO No.,Batch No.,Vendor lot no.,daily_sales_forecast_quantity,selling_price_usd,destination_dc
+ITM-001,Apple iPhone 15 Pro,Electronics,Finished Goods,A,5000,PCS,Own Stock,WH03-C09,China,410,2562150,17/07/24,08/01/26,18 Months,PO-79596,BATCH-078,LOT-3215-IN,285,600,DC5
+ITM-002,"Samsung 65"" 4K Smart TV",Electronics,Finished Goods,A,1250,PCS,Own Stock,WH03-A09,South Korea,450,562500,05/01/25,26/12/26,24 Months,PO-85662,BATCH-063,LOT-1585-CN,95,749.99,DC2
+ITM-003,Nike Air Jordan Sneakers,Apparel,Finished Goods,A,3200,PCS,Customer-Owned,WH02-B06,Vietnam,65,208000,15/03/25,28/02/28,36 Months,PO-101938,BATCH-047,LOT-6860-IN,125,159.99,DC3
+ITM-004,KitchenAid Stand Mixer,Home & Kitchen,Finished Goods,A,1850,PCS,Consignment,WH01-B09,China,180,333000,20/10/24,13/04/26,18 Months,PO-99754,BATCH-034,LOT-4438-IN,45,329.99,DC2
+ITM-005,Dyson V15 Vacuum Cleaner,Home & Kitchen,Finished Goods,A,1750,PCS,Consignment,WH01-A06,Malaysia,350,612500,18/10/24,08/10/26,24 Months,PO-100605,BATCH-092,LOT-6891-IN,85,599.99,DC1
+ITM-001,Apple iPhone 15 Pro,Electronics,Finished Goods,A,7400,PCS,Customer-Owned,WH01-D10,China,410,1752050,24/01/25,18/07/26,18 Months,PO-87191,BATCH-095,LOT-3060-IN,285,600,DC4
+ITM-002,"Samsung 65"" 4K Smart TV",Electronics,Finished Goods,A,2100,PCS,Customer-Owned,WH03-A05,South Korea,450,945000,20/03/25,04/03/28,36 Months,PO-78937,BATCH-033,LOT-8470-CN,95,749.99,DC2
+ITM-003,Nike Air Jordan Sneakers,Apparel,Finished Goods,A,1800,PCS,Consignment,WH03-A06,Vietnam,65,117000,05/08/24,31/07/25,12 Months,PO-83103,BATCH-053,LOT-7417-CN,125,159.99,DC5
+ITM-004,KitchenAid Stand Mixer,Home & Kitchen,Finished Goods,A,350,PCS,Customer-Owned,WH01-D06,China,180,63000,14/12/24,04/12/26,24 Months,PO-100029,BATCH-069,LOT-7502-IN,45,329.99,DC1
+ITM-005,Dyson V15 Vacuum Cleaner,Home & Kitchen,Finished Goods,A,1650,PCS,Own Stock,WH02-C03,Malaysia,350,577500,02/09/24,24/02/26,18 Months,PO-85610,BATCH-006,LOT-5129-US,85,599.99,DC5
+ITM-001,Apple iPhone 15 Pro,Electronics,Finished Goods,A,3200,PCS,Consignment,WH02-A10,China,410,346115,07/10/24,02/10/25,12 Months,PO-81406,BATCH-014,LOT-1609-IN,285,600,DC3
+ITM-002,"Samsung 65"" 4K Smart TV",Electronics,Finished Goods,A,2850,PCS,Consignment,WH02-D04,South Korea,450,1282500,12/11/24,17/10/29,60 Months,PO-98122,BATCH-044,LOT-2286-JP,95,749.99,DC4
+ITM-003,Nike Air Jordan Sneakers,Apparel,Finished Goods,A,3850,PCS,Own Stock,WH02-D02,Vietnam,65,250250,01/08/24,22/07/26,24 Months,PO-84923,BATCH-018,LOT-3366-US,125,159.99,DC5

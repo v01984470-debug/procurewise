@@ -1,0 +1,19 @@
+from_port,to_port,transfer_cost_usd
+Port Long Beach,Port Georgia,1450
+Port Long Beach,Port New York,1850
+Port Long Beach,Port Boston,1950
+Port Los Angeles,Port Georgia,1420
+Port Los Angeles,Port New York,1820
+Port Los Angeles,Port Boston,1920
+Port Seattle,Port Georgia,1650
+Port Seattle,Port New York,2050
+Port Seattle,Port Boston,1750
+Port Georgia,Port Long Beach,1450
+Port Georgia,Port Los Angeles,1420
+Port Georgia,Port Seattle,1650
+Port New York,Port Long Beach,1850
+Port New York,Port Los Angeles,1820
+Port New York,Port Seattle,2050
+Port Boston,Port Long Beach,1950
+Port Boston,Port Los Angeles,1920
+Port Boston,Port Seattle,1750

@@ -1,0 +1,101 @@
+PO number,PO date,Supplier Name,Supplier Code,Buyer Name,Item Number,Item Description,UoM,Qnty Ordered,Currency,Item value/pc with shipping,Total PO value,PO Due Date,Shipping location,Ship to Location,Requested Mode of Transport,Supplier ETA,Unique Code
+PO-103908,30/04/25,Supplier K,SUP-1037,Anil Grover,ITM-001,High Precision Resistor,PCS,1335,USD,2.75,3671.25,23/05/25,Japan/Osaka,Philippines/Manila,Air,21/05/25,137A
+PO-103909,28/04/25,Supplier C,SUP-1029,Meena Jain,ITM-002,Thermal Paste,TUB,1933,USD,5.81,11230.73,19/05/25,USA/Texas,Philippines/Manila,Sea,17/05/25,229S
+PO-103910,29/04/25,Supplier R,SUP-1018,Alice Paul,ITM-004,Silicone Sealant,TUB,1678,USD,3.6,6040.8,30/05/25,Germany/Frankfurt,Philippines/Manila,Sea,29/05/25,418S
+PO-103911,25/04/25,Supplier X,SUP-1024,Anil Grover,ITM-004,Silicone Sealant,TUB,1724,USD,5.94,10240.56,23/05/25,USA/California,US/New York,Air,22/05/25,424A
+PO-103912,01/05/25,Supplier S,SUP-1019,Anil Grover,ITM-005,Logic Chip,PCS,878,USD,4.22,3705.16,03/06/25,Japan/Tokyo,Taiwan/Taipei,Air,02/06/25,519A
+PO-103913,25/04/25,Supplier S,SUP-1019,Anil Grover,ITM-004,Silicone Sealant,TUB,704,USD,5.87,4132.48,19/05/25,Japan/Tokyo,US/New York,Air,17/05/25,419A
+PO-103914,01/05/25,Supplier D,SUP-1004,Rajiv Mehta,ITM-005,Logic Chip,PCS,1059,USD,2.6,2753.4,09/06/25,USA/California,Taiwan/Taipei,Sea,08/06/25,504S
+PO-103915,23/04/25,Supplier C,SUP-1029,Alice Paul,ITM-002,Thermal Paste,TUB,1740,USD,5.81,10109.4,27/05/25,USA/Texas,Philippines/Manila,Sea,25/05/25,229S
+PO-103916,01/05/25,Supplier G,SUP-1007,Alice Paul,ITM-001,High Precision Resistor,PCS,1232,USD,0.75,924,03/06/25,Japan/Osaka,Philippines/Manila,Sea,31/05/25,107S
+PO-103917,29/04/25,Supplier S,SUP-1045,Rajiv Mehta,ITM-004,Silicone Sealant,TUB,1854,USD,6.23,11550.42,01/06/25,India/Mumbai,Taiwan/Taipei,Air,30/05/25,445A
+PO-103918,25/04/25,Supplier P,SUP-1042,Meena Jain,ITM-004,Silicone Sealant,TUB,1522,USD,3.6,5479.2,23/05/25,Germany/Frankfurt,Philippines/Manila,Sea,20/05/25,442S
+PO-103919,24/04/25,Supplier X,SUP-1050,Alice Paul,ITM-001,High Precision Resistor,PCS,1178,USD,2.78,3274.84,30/05/25,Taiwan/Taipei,Taiwan/Taipei,Air,29/05/25,150A
+PO-103920,24/04/25,Supplier X,SUP-1050,Alice Paul,ITM-002,Thermal Paste,TUB,1178,USD,7.34,8646.52,28/05/25,Taiwan/Taipei,Philippines/Manila,Air,24/05/25,250A
+PO-103921,22/04/25,Supplier J,SUP-1010,Rajiv Mehta,ITM-002,Thermal Paste,TUB,871,USD,7.68,6689.28,30/05/25,Germany/Frankfurt,US/New York,Air,27/05/25,210A
+PO-103922,23/04/25,Supplier U,SUP-1021,Anil Grover,ITM-005,Logic Chip,PCS,1734,USD,4.49,7785.66,23/05/25,USA/California,Taiwan/Taipei,Air,21/05/25,521A
+PO-103923,27/04/25,Supplier D,SUP-1030,Rajiv Mehta,ITM-002,Thermal Paste,TUB,730,USD,6.94,5066.2,27/05/25,India/Pune,Taiwan/Taipei,Air,25/05/25,230A
+PO-103924,27/04/25,Supplier J,SUP-1036,Anil Grover,ITM-002,Thermal Paste,TUB,1702,USD,7,11914,01/06/25,Japan/Osaka,Taiwan/Taipei,Air,31/05/25,236A
+PO-103925,26/04/25,Supplier W,SUP-1023,Meena Jain,ITM-004,Silicone Sealant,TUB,1828,USD,3.72,6800.16,18/05/25,India/Pune,Philippines/Manila,Sea,15/05/25,423S
+PO-103926,28/04/25,Supplier W,SUP-1023,Rajiv Mehta,ITM-003,Capacitor 100uF,PCS,1177,USD,0.55,647.35,19/05/25,India/Pune,Taiwan/Taipei,Sea,17/05/25,323S
+PO-103927,28/04/25,Supplier G,SUP-1033,Meena Jain,ITM-004,Silicone Sealant,TUB,1222,USD,4.05,4949.1,18/05/25,USA/Texas,Taiwan/Taipei,Sea,14/05/25,433S
+PO-103928,30/04/25,Supplier I,SUP-1035,Alice Paul,ITM-003,Capacitor 100uF,PCS,1952,USD,0.52,1015.04,04/06/25,China/Shanghai,Philippines/Manila,Sea,31/05/25,335S
+PO-103929,24/04/25,Supplier B,SUP-1028,Meena Jain,ITM-004,Silicone Sealant,TUB,968,USD,3.71,3591.28,26/05/25,Japan/Tokyo,Philippines/Manila,Sea,24/05/25,428S
+PO-103930,24/04/25,Supplier E,SUP-1031,Rajiv Mehta,ITM-005,Logic Chip,PCS,1857,USD,2.31,4289.67,18/05/25,China/Shanghai,Philippines/Manila,Sea,15/05/25,531S
+PO-103931,26/04/25,Supplier Z,SUP-1026,Anil Grover,ITM-003,Capacitor 100uF,PCS,1593,USD,0.48,764.64,02/06/25,Germany/Frankfurt,US/New York,Sea,31/05/25,326S
+PO-103932,25/04/25,Supplier O,SUP-1015,Alice Paul,ITM-001,High Precision Resistor,PCS,631,USD,2.83,1785.73,02/06/25,USA/California,US/New York,Air,01/06/25,115A
+PO-103933,24/04/25,Supplier L,SUP-1012,Meena Jain,ITM-003,Capacitor 100uF,PCS,1888,USD,2.32,4380.16,26/05/25,Japan/Tokyo,Taiwan/Taipei,Air,22/05/25,312A
+PO-103934,24/04/25,Supplier Z,SUP-1026,Meena Jain,ITM-003,Capacitor 100uF,PCS,709,USD,2.49,1765.41,01/06/25,Germany/Frankfurt,US/New York,Air,28/05/25,326A
+PO-103935,01/05/25,Supplier P,SUP-1016,Anil Grover,ITM-003,Capacitor 100uF,PCS,1886,USD,0.56,1056.16,01/06/25,USA/California,Philippines/Manila,Sea,29/05/25,316S
+PO-103936,28/04/25,Supplier G,SUP-1033,Rajiv Mehta,ITM-003,Capacitor 100uF,PCS,1782,USD,0.56,997.92,04/06/25,USA/Texas,Philippines/Manila,Sea,31/05/25,333S
+PO-103937,27/04/25,Supplier Q,SUP-1017,Meena Jain,ITM-005,Logic Chip,PCS,1120,USD,4.4,4928,17/05/25,Taiwan/Taipei,Taiwan/Taipei,Air,14/05/25,517A
+PO-103938,25/04/25,Supplier D,SUP-1030,Meena Jain,ITM-001,High Precision Resistor,PCS,584,USD,0.8,467.2,23/05/25,India/Pune,US/New York,Sea,19/05/25,130S
+PO-103939,01/05/25,Supplier S,SUP-1045,Meena Jain,ITM-003,Capacitor 100uF,PCS,1141,USD,0.58,661.78,30/05/25,India/Mumbai,US/New York,Sea,27/05/25,345S
+PO-103940,22/04/25,Supplier V,SUP-1022,Rajiv Mehta,ITM-004,Silicone Sealant,TUB,993,USD,4.18,4150.74,29/05/25,Taiwan/Taipei,US/New York,Sea,28/05/25,422S
+PO-103941,29/04/25,Supplier E,SUP-1031,Anil Grover,ITM-001,High Precision Resistor,PCS,1324,USD,0.8,1059.2,05/06/25,China/Shanghai,Philippines/Manila,Sea,02/06/25,131S
+PO-103942,26/04/25,Supplier V,SUP-1022,Alice Paul,ITM-001,High Precision Resistor,PCS,1571,USD,0.74,1162.54,04/06/25,Taiwan/Taipei,Philippines/Manila,Sea,01/06/25,122S
+PO-103943,27/04/25,Supplier G,SUP-1007,Anil Grover,ITM-005,Logic Chip,PCS,1741,USD,2.53,4404.73,05/06/25,Japan/Osaka,Philippines/Manila,Sea,02/06/25,507S
+PO-103944,24/04/25,Supplier H,SUP-1008,Anil Grover,ITM-002,Thermal Paste,TUB,1956,USD,7.36,14396.16,23/05/25,Taiwan/Taipei,Taiwan/Taipei,Air,20/05/25,208A
+PO-103945,23/04/25,Supplier P,SUP-1042,Meena Jain,ITM-005,Logic Chip,PCS,618,USD,4.31,2663.58,23/05/25,Germany/Frankfurt,Taiwan/Taipei,Air,19/05/25,542A
+PO-103946,29/04/25,Supplier K,SUP-1037,Rajiv Mehta,ITM-003,Capacitor 100uF,PCS,1279,USD,2.47,3159.13,25/05/25,Japan/Osaka,US/New York,Air,24/05/25,337A
+PO-103947,23/04/25,Supplier K,SUP-1037,Alice Paul,ITM-005,Logic Chip,PCS,1479,USD,4.48,6625.92,16/05/25,Japan/Osaka,Philippines/Manila,Air,13/05/25,537A
+PO-103948,30/04/25,Supplier M,SUP-1013,Rajiv Mehta,ITM-002,Thermal Paste,TUB,1769,USD,7.92,14010.48,23/05/25,Japan/Tokyo,Taiwan/Taipei,Air,21/05/25,213A
+PO-103949,22/04/25,Supplier E,SUP-1005,Anil Grover,ITM-005,Logic Chip,PCS,798,USD,2.56,2042.88,15/05/25,USA/California,Taiwan/Taipei,Sea,11/05/25,505S
+PO-103950,24/04/25,Supplier U,SUP-1047,Alice Paul,ITM-001,High Precision Resistor,PCS,1251,USD,0.74,925.74,26/05/25,Japan/Osaka,Philippines/Manila,Sea,25/05/25,147S
+PO-103951,26/04/25,Supplier A,SUP-1001,Anil Grover,ITM-001,High Precision Resistor,PCS,1761,USD,2.85,5018.85,26/05/25,Japan/Osaka,Taiwan/Taipei,Air,24/05/25,101A
+PO-103952,29/04/25,Supplier S,SUP-1045,Meena Jain,ITM-004,Silicone Sealant,TUB,821,USD,4.21,3456.41,26/05/25,India/Mumbai,US/New York,Sea,25/05/25,445S
+PO-103953,24/04/25,Supplier Y,SUP-1025,Meena Jain,ITM-001,High Precision Resistor,PCS,1298,USD,0.82,1064.36,25/05/25,India/Mumbai,Philippines/Manila,Sea,24/05/25,125S
+PO-103954,27/04/25,Supplier N,SUP-1040,Meena Jain,ITM-001,High Precision Resistor,PCS,1697,USD,0.79,1340.63,31/05/25,China/Shanghai,Philippines/Manila,Sea,28/05/25,140S
+PO-103955,23/04/25,Supplier J,SUP-1010,Alice Paul,ITM-004,Silicone Sealant,TUB,1619,USD,3.84,6216.96,23/05/25,Germany/Frankfurt,Taiwan/Taipei,Sea,22/05/25,410S
+PO-103956,26/04/25,Supplier O,SUP-1015,Meena Jain,ITM-004,Silicone Sealant,TUB,846,USD,6.34,5363.64,17/05/25,USA/California,Taiwan/Taipei,Air,16/05/25,415A
+PO-103957,26/04/25,Supplier Q,SUP-1017,Rajiv Mehta,ITM-005,Logic Chip,PCS,1193,USD,4.4,5249.2,02/06/25,Taiwan/Taipei,Philippines/Manila,Air,29/05/25,517A
+PO-103958,28/04/25,Supplier T,SUP-1020,Anil Grover,ITM-004,Silicone Sealant,TUB,1397,USD,5.44,7599.68,25/05/25,Taiwan/Taipei,Philippines/Manila,Air,24/05/25,420A
+PO-103959,30/04/25,Supplier H,SUP-1034,Rajiv Mehta,ITM-005,Logic Chip,PCS,1021,USD,2.54,2593.34,30/05/25,USA/California,Philippines/Manila,Sea,26/05/25,534S
+PO-103960,25/04/25,Supplier G,SUP-1033,Alice Paul,ITM-004,Silicone Sealant,TUB,534,USD,4.05,2162.7,21/05/25,USA/Texas,Taiwan/Taipei,Sea,18/05/25,433S
+PO-103961,25/04/25,Supplier O,SUP-1041,Anil Grover,ITM-001,High Precision Resistor,PCS,1422,USD,2.74,3896.28,25/05/25,China/Shanghai,Taiwan/Taipei,Air,24/05/25,141A
+PO-103962,30/04/25,Supplier Y,SUP-1025,Meena Jain,ITM-003,Capacitor 100uF,PCS,743,USD,0.53,393.79,30/05/25,India/Mumbai,Philippines/Manila,Sea,26/05/25,325S
+PO-103963,22/04/25,Supplier R,SUP-1044,Meena Jain,ITM-001,High Precision Resistor,PCS,1617,USD,0.76,1228.92,29/05/25,Japan/Tokyo,US/New York,Sea,26/05/25,144S
+PO-103964,24/04/25,Supplier F,SUP-1006,Anil Grover,ITM-005,Logic Chip,PCS,1192,USD,2.24,2670.08,19/05/25,USA/Texas,Philippines/Manila,Sea,18/05/25,506S
+PO-103965,23/04/25,Supplier U,SUP-1021,Alice Paul,ITM-002,Thermal Paste,TUB,1947,USD,5.35,10416.45,15/05/25,USA/California,Philippines/Manila,Sea,12/05/25,221S
+PO-103966,29/04/25,Supplier C,SUP-1029,Alice Paul,ITM-005,Logic Chip,PCS,1244,USD,2.45,3047.8,20/05/25,USA/Texas,Philippines/Manila,Sea,18/05/25,529S
+PO-103967,01/05/25,Supplier B,SUP-1002,Rajiv Mehta,ITM-003,Capacitor 100uF,PCS,555,USD,0.49,271.95,24/05/25,Japan/Tokyo,Philippines/Manila,Sea,20/05/25,302S
+PO-103968,28/04/25,Supplier E,SUP-1005,Anil Grover,ITM-002,Thermal Paste,TUB,677,USD,7.06,4779.62,23/05/25,USA/California,US/New York,Air,22/05/25,205A
+PO-103969,23/04/25,Supplier X,SUP-1024,Anil Grover,ITM-003,Capacitor 100uF,PCS,1390,USD,2.48,3447.2,16/05/25,USA/California,Taiwan/Taipei,Air,14/05/25,324A
+PO-103970,28/04/25,Supplier D,SUP-1004,Meena Jain,ITM-002,Thermal Paste,TUB,801,USD,7.53,6031.53,21/05/25,USA/California,Taiwan/Taipei,Air,19/05/25,204A
+PO-103971,01/05/25,Supplier N,SUP-1040,Anil Grover,ITM-003,Capacitor 100uF,PCS,676,USD,2.47,1669.72,03/06/25,China/Shanghai,Taiwan/Taipei,Air,02/06/25,340A
+PO-103972,26/04/25,Supplier K,SUP-1037,Meena Jain,ITM-003,Capacitor 100uF,PCS,1666,USD,2.47,4115.02,27/05/25,Japan/Osaka,Philippines/Manila,Air,26/05/25,337A
+PO-103973,27/04/25,Supplier G,SUP-1007,Anil Grover,ITM-002,Thermal Paste,TUB,1883,USD,7.06,13293.98,18/05/25,Japan/Osaka,Philippines/Manila,Air,17/05/25,207A
+PO-103974,27/04/25,Supplier F,SUP-1006,Alice Paul,ITM-002,Thermal Paste,TUB,1359,USD,7.93,10776.87,24/05/25,USA/Texas,Taiwan/Taipei,Air,23/05/25,206A
+PO-103975,27/04/25,Supplier H,SUP-1034,Anil Grover,ITM-002,Thermal Paste,TUB,1638,USD,7.27,11908.26,18/05/25,USA/California,US/New York,Air,14/05/25,234A
+PO-103976,23/04/25,Supplier G,SUP-1007,Rajiv Mehta,ITM-005,Logic Chip,PCS,1476,USD,4.42,6523.92,25/05/25,Japan/Osaka,Taiwan/Taipei,Air,22/05/25,507A
+PO-103977,01/05/25,Supplier L,SUP-1038,Alice Paul,ITM-003,Capacitor 100uF,PCS,1459,USD,0.58,846.22,04/06/25,India/Pune,US/New York,Sea,03/06/25,338S
+PO-103978,24/04/25,Supplier V,SUP-1048,Meena Jain,ITM-002,Thermal Paste,TUB,1414,USD,5.8,8201.2,27/05/25,India/Pune,Taiwan/Taipei,Sea,24/05/25,248S
+PO-103979,29/04/25,Supplier L,SUP-1038,Rajiv Mehta,ITM-002,Thermal Paste,TUB,1372,USD,5.72,7847.84,03/06/25,India/Pune,US/New York,Sea,01/06/25,238S
+PO-103980,27/04/25,Supplier X,SUP-1024,Alice Paul,ITM-005,Logic Chip,PCS,1979,USD,2.32,4591.28,01/06/25,USA/California,Philippines/Manila,Sea,30/05/25,524S
+PO-103981,27/04/25,Supplier L,SUP-1012,Meena Jain,ITM-003,Capacitor 100uF,PCS,1611,USD,2.32,3737.52,24/05/25,Japan/Tokyo,Taiwan/Taipei,Air,21/05/25,312A
+PO-103982,30/04/25,Supplier F,SUP-1032,Alice Paul,ITM-001,High Precision Resistor,PCS,565,USD,2.96,1672.4,08/06/25,China/Suzhou,Taiwan/Taipei,Air,04/06/25,132A
+PO-103983,01/05/25,Supplier L,SUP-1012,Meena Jain,ITM-004,Silicone Sealant,TUB,1007,USD,5.97,6011.79,24/05/25,Japan/Tokyo,US/New York,Air,22/05/25,412A
+PO-103984,23/04/25,Supplier V,SUP-1022,Meena Jain,ITM-001,High Precision Resistor,PCS,1303,USD,2.64,3439.92,14/05/25,Taiwan/Taipei,Philippines/Manila,Air,10/05/25,122A
+PO-103985,28/04/25,Supplier I,SUP-1009,Anil Grover,ITM-005,Logic Chip,PCS,1532,USD,4.22,6465.04,27/05/25,Japan/Osaka,US/New York,Air,23/05/25,509A
+PO-103986,29/04/25,Supplier I,SUP-1009,Alice Paul,ITM-004,Silicone Sealant,TUB,1447,USD,6.33,9159.51,21/05/25,Japan/Osaka,US/New York,Air,19/05/25,409A
+PO-103987,01/05/25,Supplier N,SUP-1014,Anil Grover,ITM-001,High Precision Resistor,PCS,1832,USD,2.63,4818.16,31/05/25,Japan/Osaka,Taiwan/Taipei,Air,29/05/25,114A
+PO-103988,29/04/25,Supplier O,SUP-1041,Rajiv Mehta,ITM-001,High Precision Resistor,PCS,748,USD,0.79,590.92,02/06/25,China/Shanghai,Philippines/Manila,Sea,31/05/25,141S
+PO-103989,24/04/25,Supplier V,SUP-1048,Alice Paul,ITM-001,High Precision Resistor,PCS,791,USD,0.77,609.07,15/05/25,India/Pune,Taiwan/Taipei,Sea,13/05/25,148S
+PO-103990,24/04/25,Supplier A,SUP-1001,Anil Grover,ITM-004,Silicone Sealant,TUB,659,USD,3.87,2550.33,15/05/25,Japan/Osaka,US/New York,Sea,14/05/25,401S
+PO-103991,28/04/25,Supplier S,SUP-1019,Rajiv Mehta,ITM-003,Capacitor 100uF,PCS,1291,USD,0.54,697.14,06/06/25,Japan/Tokyo,US/New York,Sea,02/06/25,319S
+PO-103992,22/04/25,Supplier R,SUP-1018,Alice Paul,ITM-004,Silicone Sealant,TUB,951,USD,3.6,3423.6,23/05/25,Germany/Frankfurt,US/New York,Sea,20/05/25,418S
+PO-103993,25/04/25,Supplier P,SUP-1042,Rajiv Mehta,ITM-004,Silicone Sealant,TUB,1416,USD,3.6,5097.6,18/05/25,Germany/Frankfurt,US/New York,Sea,17/05/25,442S
+PO-103994,01/05/25,Supplier U,SUP-1047,Anil Grover,ITM-003,Capacitor 100uF,PCS,1923,USD,2.42,4653.66,07/06/25,Japan/Osaka,Taiwan/Taipei,Air,03/06/25,347A
+PO-103995,25/04/25,Supplier E,SUP-1005,Rajiv Mehta,ITM-004,Silicone Sealant,TUB,1702,USD,3.77,6416.54,31/05/25,USA/California,Philippines/Manila,Sea,29/05/25,405S
+PO-103996,25/04/25,Supplier J,SUP-1036,Alice Paul,ITM-004,Silicone Sealant,TUB,1677,USD,3.76,6305.52,21/05/25,Japan/Osaka,US/New York,Sea,19/05/25,436S
+PO-103997,23/04/25,Supplier V,SUP-1022,Alice Paul,ITM-002,Thermal Paste,TUB,1758,USD,7.59,13343.22,26/05/25,Taiwan/Taipei,Taiwan/Taipei,Air,22/05/25,222A
+PO-103998,30/04/25,Supplier U,SUP-1047,Meena Jain,ITM-001,High Precision Resistor,PCS,793,USD,0.74,586.82,24/05/25,Japan/Osaka,Philippines/Manila,Sea,21/05/25,147S
+PO-103999,14/05/25,Supplier O,SUP-1041,Meena Jain,ITM-002,Thermal Paste,TUB,1619,USD,5.18,8386.42,18/06/25,China/Shanghai,US/New York,Sea,16/06/25,241S
+PO-104000,01/05/25,Supplier E,SUP-1031,Rajiv Mehta,ITM-002,Thermal Paste,TUB,1955,USD,5.7,11143.5,03/06/25,China/Shanghai,Philippines/Manila,Sea,01/06/25,231S
+PO-104001,28/04/25,Supplier Y,SUP-1025,Meena Jain,ITM-005,Logic Chip,PCS,1367,USD,2.44,3335.48,23/05/25,India/Mumbai,US/New York,Sea,20/05/25,525S
+PO-104002,30/04/25,Supplier Q,SUP-1017,Meena Jain,ITM-003,Capacitor 100uF,PCS,723,USD,0.54,390.42,20/05/25,Taiwan/Taipei,US/New York,Sea,17/05/25,317S
+PO-104003,23/04/25,Supplier Y,SUP-1025,Rajiv Mehta,ITM-001,High Precision Resistor,PCS,522,USD,0.82,428.04,19/05/25,India/Mumbai,Philippines/Manila,Sea,18/05/25,125S
+PO-104004,22/04/25,Supplier P,SUP-1016,Meena Jain,ITM-003,Capacitor 100uF,PCS,1920,USD,0.56,1075.2,24/05/25,USA/California,Philippines/Manila,Sea,22/05/25,316S
+PO-104005,30/04/25,Supplier E,SUP-1031,Rajiv Mehta,ITM-002,Thermal Paste,TUB,1248,USD,8.01,9996.48,31/05/25,China/Shanghai,Taiwan/Taipei,Air,27/05/25,231A
+PO-104006,13/05/25,Supplier C,SUP-1003,Meena Jain,ITM-003,Capacitor 100uF,PCS,721,USD,0.49,353.29,20/06/25,China/Suzhou,US/New York,Sea,18/06/25,303S
+PO-104007,10/06/25,Supplier C,SUP-1003,Alice Paul,ITM-004,Silicone Sealant,TUB,1883,USD,4.13,7776.79,12/06/25,China/Suzhou,US/New York,Sea,10/06/25,403S

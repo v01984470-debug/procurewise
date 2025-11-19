@@ -1,0 +1,101 @@
+PO number,PO date,Supplier Name,Supplier Code,Buyer Name,Item Number,Item Description,UoM,Qnty Ordered,Currency,Item value/pc with shipping,Total PO value,PO Due Date,Shipping location,Ship to Location,Requested Mode of Transport,Supplier ETA,Unique Code,Destination DC,Arrival Port,Container no
+PO-103908,30/04/25,Apple Inc,SUP-1037,Anil Grover,ITM-001,Apple iPhone 15 Pro,PCS,2500,USD,410,2300000,23/05/25,China/Shenzhen,US/New York,Sea,21/05/25,137A,DC3,Port Georgia,COLE5888700
+PO-103909,28/04/25,Samsung Electronics,SUP-1029,Meena Jain,ITM-002,"Samsung 65"" 4K Smart TV",PCS,1200,USD,465,558000,19/05/25,South Korea/Seoul,US/New York,Sea,17/05/25,229S,DC3,Port Boston,YOTS1125488
+PO-103910,29/04/25,KitchenAid Corp,SUP-1018,Alice Paul,ITM-004,KitchenAid Stand Mixer,PCS,850,USD,195,165750,30/05/25,China/Guangzhou,US/New York,Sea,29/05/25,418S,DC1,Port Georgia,GOAZ4897145
+PO-103911,25/04/25,KitchenAid Corp,SUP-1024,Anil Grover,ITM-004,KitchenAid Stand Mixer,PCS,950,USD,195,185250,23/05/25,China/Guangzhou,US/New York,Sea,22/05/25,424A,DC2,Port Boston,BPSD6992332
+PO-103912,01/05/25,Dyson Ltd,SUP-1019,Anil Grover,ITM-005,Dyson V15 Vacuum Cleaner,PCS,600,USD,365,219000,03/06/25,Malaysia/Kuala Lumpur,US/New York,Sea,02/06/25,519A,DC3,Port Boston,YCRQ6943277
+PO-103913,25/04/25,KitchenAid Corp,SUP-1019,Anil Grover,ITM-004,KitchenAid Stand Mixer,PCS,750,USD,195,146250,19/05/25,China/Guangzhou,US/New York,Sea,17/05/25,419A,DC1,Port Georgia,KZSA4287973
+PO-103914,01/05/25,Dyson Ltd,SUP-1004,Rajiv Mehta,ITM-005,Dyson V15 Vacuum Cleaner,PCS,850,USD,365,310250,09/06/25,Malaysia/Kuala Lumpur,US/New York,Sea,08/06/25,504S,DC3,Port Georgia,NCBX8489984
+PO-103915,23/04/25,Samsung Electronics,SUP-1029,Alice Paul,ITM-002,"Samsung 65"" 4K Smart TV",PCS,950,USD,465,441750,27/05/25,South Korea/Seoul,US/New York,Sea,25/05/25,229S,DC2,Port Boston,BKPF3377896
+PO-103916,01/05/25,Apple Inc,SUP-1007,Alice Paul,ITM-001,Apple iPhone 15 Pro,PCS,1800,USD,410,1656000,03/06/25,China/Shenzhen,US/New York,Sea,31/05/25,107S,DC1,Port Georgia,BZHQ7954032
+PO-103917,29/04/25,KitchenAid Corp,SUP-1045,Rajiv Mehta,ITM-004,KitchenAid Stand Mixer,PCS,1200,USD,195,234000,01/06/25,China/Guangzhou,US/New York,Sea,30/05/25,445A,DC1,Port Georgia,MALG0836180
+PO-103918,25/04/25,Supplier P,SUP-1042,Meena Jain,ITM-004,KitchenAid Stand Mixer,TUB,1522,USD,3.6,5479.2,23/05/25,Germany/Frankfurt,Philippines/Manila,Sea,20/05/25,442S,DC2,Port Seattle,TFYZ9904870
+PO-103919,24/04/25,Apple Inc,SUP-1050,Alice Paul,ITM-001,Apple iPhone 15 Pro,PCS,1500,USD,410,1380000,30/05/25,China/Shenzhen,US/New York,Sea,29/05/25,150A,DC3,Port Georgia,BVWD9121769
+PO-103920,24/04/25,Samsung Electronics,SUP-1050,Alice Paul,ITM-002,"Samsung 65"" 4K Smart TV",PCS,800,USD,465,372000,28/05/25,South Korea/Seoul,US/New York,Sea,24/05/25,250A,DC3,Port Boston,CQXW8162864
+PO-103921,22/04/25,Samsung Electronics,SUP-1010,Rajiv Mehta,ITM-002,"Samsung 65"" 4K Smart TV",PCS,650,USD,465,302250,30/05/25,South Korea/Seoul,US/New York,Sea,27/05/25,210A,DC1,Port Georgia,ULOT7217674
+PO-103922,23/04/25,Supplier U,SUP-1021,Anil Grover,ITM-005,Dyson V15 Vacuum Cleaner,PCS,1734,USD,4.49,7785.66,23/05/25,USA/California,Taiwan/Taipei,Air,21/05/25,521A,DC5,Port Boston,TYDZ6741355
+PO-103923,27/04/25,Supplier D,SUP-1030,Rajiv Mehta,ITM-002,"Samsung 65"" 4K Smart TV",TUB,730,USD,6.94,5066.2,27/05/25,India/Pune,Taiwan/Taipei,Air,25/05/25,230A,DC5,Port Seattle,OZEM4730963
+PO-103924,27/04/25,Supplier J,SUP-1036,Anil Grover,ITM-002,"Samsung 65"" 4K Smart TV",TUB,1702,USD,7,11914,01/06/25,Japan/Osaka,Taiwan/Taipei,Air,31/05/25,236A,DC5,Port Seattle,MRHS3005765
+PO-103925,26/04/25,Supplier W,SUP-1023,Meena Jain,ITM-004,KitchenAid Stand Mixer,TUB,1828,USD,3.72,6800.16,18/05/25,India/Pune,Philippines/Manila,Sea,15/05/25,423S,DC5,Port Boston,CESJ3545043
+PO-103926,28/04/25,Supplier W,SUP-1023,Rajiv Mehta,ITM-003,Nike Air Jordan Sneakers,PCS,1177,USD,0.55,647.35,19/05/25,India/Pune,Taiwan/Taipei,Sea,17/05/25,323S,DC2,Port Seattle,RYCC3885243
+PO-103927,28/04/25,Supplier G,SUP-1033,Meena Jain,ITM-004,KitchenAid Stand Mixer,TUB,1222,USD,4.05,4949.1,18/05/25,USA/Texas,Taiwan/Taipei,Sea,14/05/25,433S,DC1,Port Los Angeles,QGOP1445383
+PO-103928,30/04/25,Supplier I,SUP-1035,Alice Paul,ITM-003,Nike Air Jordan Sneakers,PCS,1952,USD,0.52,1015.04,04/06/25,China/Shanghai,Philippines/Manila,Sea,31/05/25,335S,DC4,Port Seattle,BTOF7409498
+PO-103929,24/04/25,Supplier B,SUP-1028,Meena Jain,ITM-004,KitchenAid Stand Mixer,TUB,968,USD,3.71,3591.28,26/05/25,Japan/Tokyo,Philippines/Manila,Sea,24/05/25,428S,DC3,Port Long Beach,CRTJ3067872
+PO-103930,24/04/25,Supplier E,SUP-1031,Rajiv Mehta,ITM-005,Dyson V15 Vacuum Cleaner,PCS,1857,USD,2.31,4289.67,18/05/25,China/Shanghai,Philippines/Manila,Sea,15/05/25,531S,DC2,Port Los Angeles,XPWT5765412
+PO-103931,26/04/25,Supplier Z,SUP-1026,Anil Grover,ITM-003,Nike Air Jordan Sneakers,PCS,1593,USD,0.48,764.64,02/06/25,Germany/Frankfurt,US/New York,Sea,31/05/25,326S,DC2,Port Georgia,UWMR1703665
+PO-103932,25/04/25,Supplier O,SUP-1015,Alice Paul,ITM-001,Apple iPhone 15 Pro,PCS,631,USD,410,580520,02/06/25,USA/California,US/New York,Air,01/06/25,115A,DC2,Port New York,TOUM5102792
+PO-103933,24/04/25,Supplier L,SUP-1012,Meena Jain,ITM-003,Nike Air Jordan Sneakers,PCS,1888,USD,2.32,4380.16,26/05/25,Japan/Tokyo,Taiwan/Taipei,Air,22/05/25,312A,DC1,Port Seattle,BKOK4727654
+PO-103934,24/04/25,Supplier Z,SUP-1026,Meena Jain,ITM-003,Nike Air Jordan Sneakers,PCS,709,USD,2.49,1765.41,01/06/25,Germany/Frankfurt,US/New York,Air,28/05/25,326A,DC1,Port New York,SCJI7853741
+PO-103935,01/05/25,Supplier P,SUP-1016,Anil Grover,ITM-003,Nike Air Jordan Sneakers,PCS,1886,USD,0.56,1056.16,01/06/25,USA/California,Philippines/Manila,Sea,29/05/25,316S,DC3,Port Long Beach,DBPP4774739
+PO-103936,28/04/25,Supplier G,SUP-1033,Rajiv Mehta,ITM-003,Nike Air Jordan Sneakers,PCS,1782,USD,0.56,997.92,04/06/25,USA/Texas,Philippines/Manila,Sea,31/05/25,333S,DC2,Port New York,RKAL4865109
+PO-103937,27/04/25,Supplier Q,SUP-1017,Meena Jain,ITM-005,Dyson V15 Vacuum Cleaner,PCS,1120,USD,4.4,4928,17/05/25,Taiwan/Taipei,Taiwan/Taipei,Air,14/05/25,517A,DC4,Port New York,OKBL8330852
+PO-103938,25/04/25,Supplier D,SUP-1030,Meena Jain,ITM-001,Apple iPhone 15 Pro,PCS,584,USD,410,537280,23/05/25,India/Pune,US/New York,Sea,19/05/25,130S,DC1,Port New York,YOSB9988557
+PO-103939,01/05/25,Supplier S,SUP-1045,Meena Jain,ITM-003,Nike Air Jordan Sneakers,PCS,1141,USD,0.58,661.78,30/05/25,India/Mumbai,US/New York,Sea,27/05/25,345S,DC1,Port Boston,BMSX0677446
+PO-103940,22/04/25,Supplier V,SUP-1022,Rajiv Mehta,ITM-004,KitchenAid Stand Mixer,TUB,993,USD,4.18,4150.74,29/05/25,Taiwan/Taipei,US/New York,Sea,28/05/25,422S,DC1,Port New York,NZUK1007546
+PO-103941,29/04/25,Supplier E,SUP-1031,Anil Grover,ITM-001,Apple iPhone 15 Pro,PCS,1324,USD,410,1218080,05/06/25,China/Shanghai,Philippines/Manila,Sea,02/06/25,131S,DC2,Port Los Angeles,JCZU2442956
+PO-103942,26/04/25,Supplier V,SUP-1022,Alice Paul,ITM-001,Apple iPhone 15 Pro,PCS,1571,USD,410,1445320,04/06/25,Taiwan/Taipei,Philippines/Manila,Sea,01/06/25,122S,DC5,Port Boston,VYFY9914134
+PO-103943,27/04/25,Supplier G,SUP-1007,Anil Grover,ITM-005,Dyson V15 Vacuum Cleaner,PCS,1741,USD,2.53,4404.73,05/06/25,Japan/Osaka,Philippines/Manila,Sea,02/06/25,507S,DC2,Port Georgia,BEFI1991097
+PO-103944,24/04/25,Supplier H,SUP-1008,Anil Grover,ITM-002,"Samsung 65"" 4K Smart TV",TUB,1956,USD,7.36,14396.16,23/05/25,Taiwan/Taipei,Taiwan/Taipei,Air,20/05/25,208A,DC1,Port Long Beach,UNXG6871481
+PO-103945,23/04/25,Supplier P,SUP-1042,Meena Jain,ITM-005,Dyson V15 Vacuum Cleaner,PCS,618,USD,4.31,2663.58,23/05/25,Germany/Frankfurt,Taiwan/Taipei,Air,19/05/25,542A,DC2,Port New York,XRWJ3339872
+PO-103946,29/04/25,Supplier K,SUP-1037,Rajiv Mehta,ITM-003,Nike Air Jordan Sneakers,PCS,1279,USD,2.47,3159.13,25/05/25,Japan/Osaka,US/New York,Air,24/05/25,337A,DC1,Port Boston,HLZV7590038
+PO-103947,23/04/25,Supplier K,SUP-1037,Alice Paul,ITM-005,Dyson V15 Vacuum Cleaner,PCS,1479,USD,4.48,6625.92,16/05/25,Japan/Osaka,Philippines/Manila,Air,13/05/25,537A,DC1,Port Seattle,LHAD8201372
+PO-103948,30/04/25,Supplier M,SUP-1013,Rajiv Mehta,ITM-002,"Samsung 65"" 4K Smart TV",TUB,1769,USD,7.92,14010.48,23/05/25,Japan/Tokyo,Taiwan/Taipei,Air,21/05/25,213A,DC2,Port New York,ZXKB4797844
+PO-103949,22/04/25,Supplier E,SUP-1005,Anil Grover,ITM-005,Dyson V15 Vacuum Cleaner,PCS,798,USD,2.56,2042.88,15/05/25,USA/California,Taiwan/Taipei,Sea,11/05/25,505S,DC1,Port Georgia,CKKV2459715
+PO-103950,24/04/25,Supplier U,SUP-1047,Alice Paul,ITM-001,Apple iPhone 15 Pro,PCS,1251,USD,410,1150920,26/05/25,Japan/Osaka,Philippines/Manila,Sea,25/05/25,147S,DC3,Port Georgia,EEDR8895259
+PO-103951,26/04/25,Supplier A,SUP-1001,Anil Grover,ITM-001,Apple iPhone 15 Pro,PCS,1761,USD,410,1620120,26/05/25,Japan/Osaka,Taiwan/Taipei,Air,24/05/25,101A,DC2,Port Seattle,BZUR9574085
+PO-103952,29/04/25,Supplier S,SUP-1045,Meena Jain,ITM-004,KitchenAid Stand Mixer,TUB,821,USD,4.21,3456.41,26/05/25,India/Mumbai,US/New York,Sea,25/05/25,445S,DC2,Port Boston,TURR7002477
+PO-103953,24/04/25,Supplier Y,SUP-1025,Meena Jain,ITM-001,Apple iPhone 15 Pro,PCS,1298,USD,410,1194160,25/05/25,India/Mumbai,Philippines/Manila,Sea,24/05/25,125S,DC5,Port Boston,CTAM3523909
+PO-103954,27/04/25,Supplier N,SUP-1040,Meena Jain,ITM-001,Apple iPhone 15 Pro,PCS,1697,USD,410,1561240,31/05/25,China/Shanghai,Philippines/Manila,Sea,28/05/25,140S,DC5,Port Georgia,CVEZ5704396
+PO-103955,23/04/25,Supplier J,SUP-1010,Alice Paul,ITM-004,KitchenAid Stand Mixer,TUB,1619,USD,3.84,6216.96,23/05/25,Germany/Frankfurt,Taiwan/Taipei,Sea,22/05/25,410S,DC4,Port Seattle,DNDP1373323
+PO-103956,26/04/25,Supplier O,SUP-1015,Meena Jain,ITM-004,KitchenAid Stand Mixer,TUB,846,USD,6.34,5363.64,17/05/25,USA/California,Taiwan/Taipei,Air,16/05/25,415A,DC5,Port New York,OJJA5953443
+PO-103957,26/04/25,Supplier Q,SUP-1017,Rajiv Mehta,ITM-005,Dyson V15 Vacuum Cleaner,PCS,1193,USD,4.4,5249.2,02/06/25,Taiwan/Taipei,Philippines/Manila,Air,29/05/25,517A,DC3,Port Seattle,ZASP1722813
+PO-103958,28/04/25,Supplier T,SUP-1020,Anil Grover,ITM-004,KitchenAid Stand Mixer,TUB,1397,USD,5.44,7599.68,25/05/25,Taiwan/Taipei,Philippines/Manila,Air,24/05/25,420A,DC2,Port Georgia,VJNZ2693472
+PO-103959,30/04/25,Supplier H,SUP-1034,Rajiv Mehta,ITM-005,Dyson V15 Vacuum Cleaner,PCS,1021,USD,2.54,2593.34,30/05/25,USA/California,Philippines/Manila,Sea,26/05/25,534S,DC1,Port Los Angeles,OGXV8801596
+PO-103960,25/04/25,Supplier G,SUP-1033,Alice Paul,ITM-004,KitchenAid Stand Mixer,TUB,534,USD,4.05,2162.7,21/05/25,USA/Texas,Taiwan/Taipei,Sea,18/05/25,433S,DC2,Port New York,CTFN2425479
+PO-103961,25/04/25,Supplier O,SUP-1041,Anil Grover,ITM-001,Apple iPhone 15 Pro,PCS,1422,USD,410,1308240,25/05/25,China/Shanghai,Taiwan/Taipei,Air,24/05/25,141A,DC5,Port Boston,AVNU8255605
+PO-103962,30/04/25,Supplier Y,SUP-1025,Meena Jain,ITM-003,Nike Air Jordan Sneakers,PCS,743,USD,0.53,393.79,30/05/25,India/Mumbai,Philippines/Manila,Sea,26/05/25,325S,DC4,Port Boston,TYRF3047206
+PO-103963,22/04/25,Supplier R,SUP-1044,Meena Jain,ITM-001,Apple iPhone 15 Pro,PCS,1617,USD,410,1487640,29/05/25,Japan/Tokyo,US/New York,Sea,26/05/25,144S,DC2,Port Boston,NRZW7641156
+PO-103964,24/04/25,Supplier F,SUP-1006,Anil Grover,ITM-005,Dyson V15 Vacuum Cleaner,PCS,1192,USD,2.24,2670.08,19/05/25,USA/Texas,Philippines/Manila,Sea,18/05/25,506S,DC5,Port Boston,QXHU3178021
+PO-103965,23/04/25,Supplier U,SUP-1021,Alice Paul,ITM-002,"Samsung 65"" 4K Smart TV",TUB,1947,USD,5.35,10416.45,15/05/25,USA/California,Philippines/Manila,Sea,12/05/25,221S,DC1,Port Seattle,BUKE4055666
+PO-103966,29/04/25,Supplier C,SUP-1029,Alice Paul,ITM-005,Dyson V15 Vacuum Cleaner,PCS,1244,USD,2.45,3047.8,20/05/25,USA/Texas,Philippines/Manila,Sea,18/05/25,529S,DC5,Port New York,TSKP3323024
+PO-103967,01/05/25,Supplier B,SUP-1002,Rajiv Mehta,ITM-003,Nike Air Jordan Sneakers,PCS,555,USD,0.49,271.95,24/05/25,Japan/Tokyo,Philippines/Manila,Sea,20/05/25,302S,DC2,Port Seattle,NGST6516206
+PO-103968,28/04/25,Supplier E,SUP-1005,Anil Grover,ITM-002,"Samsung 65"" 4K Smart TV",TUB,677,USD,7.06,4779.62,23/05/25,USA/California,US/New York,Air,22/05/25,205A,DC1,Port New York,RACD2062053
+PO-103969,23/04/25,Supplier X,SUP-1024,Anil Grover,ITM-003,Nike Air Jordan Sneakers,PCS,1390,USD,2.48,3447.2,16/05/25,USA/California,Taiwan/Taipei,Air,14/05/25,324A,DC2,Port Seattle,TRWD0630441
+PO-103970,28/04/25,Supplier D,SUP-1004,Meena Jain,ITM-002,"Samsung 65"" 4K Smart TV",TUB,801,USD,7.53,6031.53,21/05/25,USA/California,Taiwan/Taipei,Air,19/05/25,204A,DC5,Port Los Angeles,TJBY9014073
+PO-103971,01/05/25,Supplier N,SUP-1040,Anil Grover,ITM-003,Nike Air Jordan Sneakers,PCS,676,USD,2.47,1669.72,03/06/25,China/Shanghai,Taiwan/Taipei,Air,02/06/25,340A,DC5,Port New York,KCHB3610045
+PO-103972,26/04/25,Supplier K,SUP-1037,Meena Jain,ITM-003,Nike Air Jordan Sneakers,PCS,1666,USD,2.47,4115.02,27/05/25,Japan/Osaka,Philippines/Manila,Air,26/05/25,337A,DC5,Port Georgia,WWPZ7987543
+PO-103973,27/04/25,Supplier G,SUP-1007,Anil Grover,ITM-002,"Samsung 65"" 4K Smart TV",TUB,1883,USD,7.06,13293.98,18/05/25,Japan/Osaka,Philippines/Manila,Air,17/05/25,207A,DC4,Port Georgia,QMBP9653974
+PO-103974,27/04/25,Supplier F,SUP-1006,Alice Paul,ITM-002,"Samsung 65"" 4K Smart TV",TUB,1359,USD,7.93,10776.87,24/05/25,USA/Texas,Taiwan/Taipei,Air,23/05/25,206A,DC3,Port New York,JPGN1596871
+PO-103975,27/04/25,Supplier H,SUP-1034,Anil Grover,ITM-002,"Samsung 65"" 4K Smart TV",TUB,1638,USD,7.27,11908.26,18/05/25,USA/California,US/New York,Air,14/05/25,234A,DC1,Port Boston,AZJD5897937
+PO-103976,23/04/25,Supplier G,SUP-1007,Rajiv Mehta,ITM-005,Dyson V15 Vacuum Cleaner,PCS,1476,USD,4.42,6523.92,25/05/25,Japan/Osaka,Taiwan/Taipei,Air,22/05/25,507A,DC4,Port New York,OFSG9914823
+PO-103977,01/05/25,Supplier L,SUP-1038,Alice Paul,ITM-003,Nike Air Jordan Sneakers,PCS,1459,USD,0.58,846.22,04/06/25,India/Pune,US/New York,Sea,03/06/25,338S,DC2,Port Georgia,MZZK9578549
+PO-103978,24/04/25,Supplier V,SUP-1048,Meena Jain,ITM-002,"Samsung 65"" 4K Smart TV",TUB,1414,USD,5.8,8201.2,27/05/25,India/Pune,Taiwan/Taipei,Sea,24/05/25,248S,DC1,Port Seattle,UDTQ8298173
+PO-103979,29/04/25,Supplier L,SUP-1038,Rajiv Mehta,ITM-002,"Samsung 65"" 4K Smart TV",TUB,1372,USD,5.72,7847.84,03/06/25,India/Pune,US/New York,Sea,01/06/25,238S,DC1,Port Boston,CIVO2068392
+PO-103980,27/04/25,Supplier X,SUP-1024,Alice Paul,ITM-005,Dyson V15 Vacuum Cleaner,PCS,1979,USD,2.32,4591.28,01/06/25,USA/California,Philippines/Manila,Sea,30/05/25,524S,DC1,Port Los Angeles,HXZH7045191
+PO-103981,27/04/25,Supplier L,SUP-1012,Meena Jain,ITM-003,Nike Air Jordan Sneakers,PCS,1611,USD,2.32,3737.52,24/05/25,Japan/Tokyo,Taiwan/Taipei,Air,21/05/25,312A,DC3,Port Georgia,IZWQ5756441
+PO-103982,30/04/25,Supplier F,SUP-1032,Alice Paul,ITM-001,Apple iPhone 15 Pro,PCS,565,USD,410,519800,08/06/25,China/Suzhou,Taiwan/Taipei,Air,04/06/25,132A,DC1,Port Georgia,NDYT1436330
+PO-103983,01/05/25,Supplier L,SUP-1012,Meena Jain,ITM-004,KitchenAid Stand Mixer,TUB,1007,USD,5.97,6011.79,24/05/25,Japan/Tokyo,US/New York,Air,22/05/25,412A,DC2,Port Georgia,JVPO6166775
+PO-103984,23/04/25,Supplier V,SUP-1022,Meena Jain,ITM-001,Apple iPhone 15 Pro,PCS,1303,USD,410,1198760,14/05/25,Taiwan/Taipei,Philippines/Manila,Air,10/05/25,122A,DC4,Port Seattle,XEWB9744338
+PO-103985,28/04/25,Supplier I,SUP-1009,Anil Grover,ITM-005,Dyson V15 Vacuum Cleaner,PCS,1532,USD,4.22,6465.04,27/05/25,Japan/Osaka,US/New York,Air,23/05/25,509A,DC2,Port Georgia,EESI2503585
+PO-103986,29/04/25,Supplier I,SUP-1009,Alice Paul,ITM-004,KitchenAid Stand Mixer,TUB,1447,USD,6.33,9159.51,21/05/25,Japan/Osaka,US/New York,Air,19/05/25,409A,DC1,Port Boston,EWQH7295422
+PO-103987,01/05/25,Supplier N,SUP-1014,Anil Grover,ITM-001,Apple iPhone 15 Pro,PCS,1832,USD,410,1685440,31/05/25,Japan/Osaka,Taiwan/Taipei,Air,29/05/25,114A,DC5,Port Boston,GHSA6188120
+PO-103988,29/04/25,Supplier O,SUP-1041,Rajiv Mehta,ITM-001,Apple iPhone 15 Pro,PCS,748,USD,410,688160,02/06/25,China/Shanghai,Philippines/Manila,Sea,31/05/25,141S,DC1,Port Georgia,EBKZ6429526
+PO-103989,24/04/25,Supplier V,SUP-1048,Alice Paul,ITM-001,Apple iPhone 15 Pro,PCS,791,USD,410,727720,15/05/25,India/Pune,Taiwan/Taipei,Sea,13/05/25,148S,DC4,Port New York,YJBN0915733
+PO-103990,24/04/25,Supplier A,SUP-1001,Anil Grover,ITM-004,KitchenAid Stand Mixer,TUB,659,USD,3.87,2550.33,15/05/25,Japan/Osaka,US/New York,Sea,14/05/25,401S,DC1,Port New York,JAKB7580285
+PO-103991,28/04/25,Supplier S,SUP-1019,Rajiv Mehta,ITM-003,Nike Air Jordan Sneakers,PCS,1291,USD,0.54,697.14,06/06/25,Japan/Tokyo,US/New York,Sea,02/06/25,319S,DC1,Port Boston,JUTK6492380
+PO-103992,22/04/25,Supplier R,SUP-1018,Alice Paul,ITM-004,KitchenAid Stand Mixer,TUB,951,USD,3.6,3423.6,23/05/25,Germany/Frankfurt,US/New York,Sea,20/05/25,418S,DC1,Port New York,RMVV4268762
+PO-103993,25/04/25,Supplier P,SUP-1042,Rajiv Mehta,ITM-004,KitchenAid Stand Mixer,TUB,1416,USD,3.6,5097.6,18/05/25,Germany/Frankfurt,US/New York,Sea,17/05/25,442S,DC1,Port Georgia,RVGG8724246
+PO-103994,01/05/25,Supplier U,SUP-1047,Anil Grover,ITM-003,Nike Air Jordan Sneakers,PCS,1923,USD,2.42,4653.66,07/06/25,Japan/Osaka,Taiwan/Taipei,Air,03/06/25,347A,DC1,Port New York,YUKN0936841
+PO-103995,25/04/25,Supplier E,SUP-1005,Rajiv Mehta,ITM-004,KitchenAid Stand Mixer,TUB,1702,USD,3.77,6416.54,31/05/25,USA/California,Philippines/Manila,Sea,29/05/25,405S,DC3,Port Boston,TNST9995288
+PO-103996,25/04/25,Supplier J,SUP-1036,Alice Paul,ITM-004,KitchenAid Stand Mixer,TUB,1677,USD,3.76,6305.52,21/05/25,Japan/Osaka,US/New York,Sea,19/05/25,436S,DC2,Port Georgia,YAZH9378081
+PO-103997,23/04/25,Supplier V,SUP-1022,Alice Paul,ITM-002,"Samsung 65"" 4K Smart TV",TUB,1758,USD,7.59,13343.22,26/05/25,Taiwan/Taipei,Taiwan/Taipei,Air,22/05/25,222A,DC2,Port New York,QRDN4447706
+PO-103998,30/04/25,Supplier U,SUP-1047,Meena Jain,ITM-001,Apple iPhone 15 Pro,PCS,793,USD,410,729560,24/05/25,Japan/Osaka,Philippines/Manila,Sea,21/05/25,147S,DC3,Port Long Beach,QPTZ0970349
+PO-103999,14/05/25,Supplier O,SUP-1041,Meena Jain,ITM-002,"Samsung 65"" 4K Smart TV",TUB,1619,USD,5.18,8386.42,18/06/25,China/Shanghai,US/New York,Sea,16/06/25,241S,DC2,Port Georgia,AWVV0621233
+PO-104000,01/05/25,Supplier E,SUP-1031,Rajiv Mehta,ITM-002,"Samsung 65"" 4K Smart TV",TUB,1955,USD,5.7,11143.5,03/06/25,China/Shanghai,Philippines/Manila,Sea,01/06/25,231S,DC2,Port New York,STTT7782354
+PO-104001,28/04/25,Supplier Y,SUP-1025,Meena Jain,ITM-005,Dyson V15 Vacuum Cleaner,PCS,1367,USD,2.44,3335.48,23/05/25,India/Mumbai,US/New York,Sea,20/05/25,525S,DC2,Port Georgia,EIOU9084557
+PO-104002,30/04/25,Supplier Q,SUP-1017,Meena Jain,ITM-003,Nike Air Jordan Sneakers,PCS,723,USD,0.54,390.42,20/05/25,Taiwan/Taipei,US/New York,Sea,17/05/25,317S,DC1,Port Boston,BIIR4939264
+PO-104003,23/04/25,Supplier Y,SUP-1025,Rajiv Mehta,ITM-001,Apple iPhone 15 Pro,PCS,522,USD,410,480240,19/05/25,India/Mumbai,Philippines/Manila,Sea,18/05/25,125S,DC1,Port Long Beach,MZRA9357567
+PO-104004,22/04/25,Supplier P,SUP-1016,Meena Jain,ITM-003,Nike Air Jordan Sneakers,PCS,1920,USD,0.56,1075.2,24/05/25,USA/California,Philippines/Manila,Sea,22/05/25,316S,DC4,Port Los Angeles,ZVFW0808266
+PO-104005,30/04/25,Supplier E,SUP-1031,Rajiv Mehta,ITM-002,"Samsung 65"" 4K Smart TV",TUB,1248,USD,8.01,9996.48,31/05/25,China/Shanghai,Taiwan/Taipei,Air,27/05/25,231A,DC3,Port Boston,PTHK0400074
+PO-104006,13/05/25,Supplier C,SUP-1003,Meena Jain,ITM-003,Nike Air Jordan Sneakers,PCS,721,USD,0.49,353.29,20/06/25,China/Suzhou,US/New York,Sea,18/06/25,303S,DC1,Port Georgia,EFDE5495755
+PO-104007,10/06/25,Supplier C,SUP-1003,Alice Paul,ITM-004,KitchenAid Stand Mixer,TUB,1883,USD,4.13,7776.79,12/06/25,China/Suzhou,US/New York,Sea,10/06/25,403S,DC2,Port New York,AJEH2888954
