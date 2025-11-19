@@ -1,6 +1,20 @@
+from fitz import open as open_pdf  # PyMuPDF
+import PIL.Image
+from PIL import Image
+import glob
 import pandas as pd
 from typing import Optional, List, Union
 from datetime import datetime
+from dotenv import load_dotenv
+import random
+import string
+import os
+from pathlib import Path
+from google import genai
+
+
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
 
 global_import_duties_df = None
 
@@ -1822,4 +1836,626 @@ def calculate_financial_impact_and_recommendation(
     except Exception as e:
         return f"Error calculating financial impact: {str(e)}"
 
+#----- Tools from previous versions -----
 
+def extract_invoice_details():
+
+    response_string = ""
+    invoice_count = 0
+    for path in glob.glob("./updated_docs/pdf_store/*.pdf"):
+        print(path)
+        doc = open_pdf(path)
+        page = doc.load_page(0)
+
+        pix = page.get_pixmap(alpha=False)
+
+        # Convert to a PIL Image
+        img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
+        img_name = path.replace(".pdf",".png")
+        print(img_name)
+        # Save as PNG
+        img.save(f"{img_name}.png", format="PNG")
+
+        load_dotenv()
+
+        image = PIL.Image.open(f"{img_name}.png")
+
+        format = """
+
+        "invoice_number": value,
+        "supplier_name": value,
+        "supplier_location": value,
+        "shipped_to_location": value,
+        "po_number": value,
+        "billed_quantity": value,
+        "unit_price": value,
+        "total_invoice amount": value,
+        "tax": value
+
+        """
+
+
+        api_key = os.getenv("GEMINI_API_KEY")
+
+        client = genai.Client()
+        response = client.models.generate_content(
+            model="gemini-2.0-flash",
+            contents=[f"""Study the invoice extremely carefully. And Extract these details: invoice number, supplier name, po number, billed quantity, unit price, total invoice amount, tax. Get Complete Invoice Number, Supplier Name [shouldn't be billed to company or ship to company], PO Number, Billed Quantity, Total Invoice Amount [Balance Due], Tax [or Import Duty Percentage]. Return these details: {format} in a markdown table format. Do Not return any extra words.. only the table. Avoid using "```" backticks """, image]
+        )
+        clear_images()
+        invoice_count+=1
+        response_string += f"\n\nInvoice #{invoice_count}:\n\n"+response.text
+
+    return response_string
+
+
+
+
+def get_po_grn_details(po_number: str) -> str:
+    # Load CSVs
+    grn_path='./updated_docs/GRN.csv'
+
+    po_data_path='./updated_docs/PO_data.csv'
+
+    grn_df = pd.read_csv(grn_path)
+    po_df = pd.read_csv(po_data_path)
+    
+    # Filter based on PO number and GRN number
+    grn_filtered = grn_df[(grn_df['PO number'] == po_number)]
+    po_filtered = po_df[po_df['PO number'] == po_number]
+
+    # Check if any results found
+    if grn_filtered.empty:
+        grn_result = f"**No matching GRN record found for PO: {po_number}**"
+    else:
+        grn_result = "**GRN Record:**\n" + grn_filtered.to_markdown(index=False)
+
+    if po_filtered.empty:
+        po_result = f"**No matching PO record found for PO: {po_number}**"
+    else:
+        po_result = "**PO Record:**\n" + po_filtered.to_markdown(index=False)
+
+    return f"{po_result}\n\n{grn_result}"
+
+def generate_alphanumeric_string(length=12):
+    characters = string.ascii_letters + string.digits
+    return ''.join(random.choice(characters) for _ in range(length))
+
+def clear_pdfs(folder_path = "./updated_docs/pdf_store"):
+    """
+    Delete all PDF files in the specified folder (non-recursive).
+
+    :param folder_path: Path to the folder whose PDFs you want to delete.
+    """
+    folder = Path(folder_path)
+    if not folder.is_dir():
+        raise ValueError(f"{folder_path!r} is not a valid directory.")
+
+    for pdf in folder.glob("*.pdf"):
+        try:
+            pdf.unlink()  # delete the file
+            print(f"Deleted: {pdf.name}")
+        except Exception as e:
+            print(f"Failed to delete {pdf.name}: {e}")
+
+
+def calculate_eta_from_files(pr_number: str):
+    """
+    Reads input files, processes data, and calculates ETA by adding schedule days to previous dates.
+    
+    Parameters:
+        pr_csv_path (str): Path to PR CSV file.
+        sp_csv_path (str): Path to Excel file containing Supplier data.
+        sh_csv_path (str): Path to Excel file containing Shipment data.
+        df_csv_path (str): Path to schedule CSV file.
+        pr_number (str): PR Number to filter data on.
+        
+    Returns:
+        pd.DataFrame: Updated schedule DataFrame with calculated ETA.
+    """
+
+    pr_csv_path = './updated_docs/pr_data.csv'
+    sp_csv_path = './updated_docs/Supplier_data.csv'
+    sh_csv_path = './updated_docs/Shipment_data.csv'
+    df_csv_path = './updated_docs/req_table.csv'
+    # Read files
+    pr = pd.read_csv(pr_csv_path, parse_dates=['Request Date', 'Need By Date', 'Action date (Stage 2)', 'Action date (Stage 3)'])
+    sp = pd.read_csv(sp_csv_path)
+    sh = pd.read_csv(sh_csv_path)
+    df = pd.read_csv(df_csv_path)
+
+    # Filter shipment and supplier data
+    sh_1 = sh[(sh['Item Number'] == 'ITM-001') & 
+              (sh['Delivery Location'] == 'US') & 
+              (sh['Mode of Transport'] == 'Sea')]
+    sp_1 = sp[sp['Item Number'] == 'ITM-001']
+
+    # Filter PR data for Approval Stage 'Passed' and Urgency level 'Medium'
+    pa = pr[(pr['Approval Stage'] == 'Passed') & (pr['Urgency level'] == 'Medium')]
+
+    # Populate Maximum Supplier Lead time (Weeks converted to Days)
+    df.loc[df['Scheduling Data'] == 'Maximum Supplier Lead time(Days)', ['Planned Schedule', 'Revised Schedule']] = [
+        sp_1['Lead time (Weeks)'].max() * 7,
+        sp_1['Lead time (Weeks)'].min() * 7
+    ]
+
+    # Calculate shipping lead time (mean rounded)
+    df.loc[df['Scheduling Data'] == 'Shipping lead time (Days) (Shipping & Delivery location & Route filter)', ['Planned Schedule', 'Revised Schedule']] = [
+        round(sh_1['Lead time (days)'].mean()),
+        round(sh_1['Lead time (days)'].mean())
+    ]
+
+    # Populate Need By Date from PR data
+    need_by_dates = pr.loc[pr['PR Number'] == pr_number, 'Need By Date'].tolist()
+    if need_by_dates:
+        df.loc[df['Scheduling Data'] == 'Need By Date', ['Planned Schedule', 'Revised Schedule']] = [need_by_dates[0], need_by_dates[0]]
+
+    # Calculate Average PR approval days
+    planned_approval_days = ((pa['Action date (Stage 3)'] - pa['Request Date']).dt.days).mean()
+    revised_approval_days = ((pa['Action date (Stage 3)'] - pa['Action date (Stage 2)']).dt.days).mean()
+    df.loc[df['Scheduling Data'] == 'Average PR Approval Days (Considering urgency and Item number)', 'Planned Schedule'] = round(planned_approval_days)
+    df.loc[df['Scheduling Data'] == 'Average PR Approval Days (Considering urgency and Item number)', 'Revised Schedule'] = revised_approval_days
+
+    # Populate Previous Date (Planned from PR, Revised as today normalized)
+    prev_dates = pr.loc[pr['PR Number'] == pr_number, 'Request Date'].tolist()
+    if prev_dates:
+        df.loc[df['Scheduling Data'] == 'Previous Date', 'Planned Schedule'] = prev_dates[0]
+    df.loc[df['Scheduling Data'] == 'Previous Date', 'Revised Schedule'] = pd.Timestamp.today().normalize()
+
+    # Convert 'Previous Date' and 'Need By Date' to datetime with dayfirst=True
+    date_rows = ['Previous Date', 'Need By Date']
+    for col in ['Planned Schedule', 'Revised Schedule']:
+        df.loc[df['Scheduling Data'].isin(date_rows), col] = pd.to_datetime(
+            df.loc[df['Scheduling Data'].isin(date_rows), col], dayfirst=True
+        )
+
+    # Sum numeric days excluding date rows and 'ETA'
+    def sum_days(series):
+        return pd.to_numeric(series, errors='coerce').sum()
+
+    planned_days_sum = sum_days(df.loc[~df['Scheduling Data'].isin(date_rows + ['ETA']), 'Planned Schedule'])
+    revised_days_sum = sum_days(df.loc[~df['Scheduling Data'].isin(date_rows + ['ETA']), 'Revised Schedule'])
+
+    # Safeguard against NaN sums
+    planned_days_sum = planned_days_sum if pd.notnull(planned_days_sum) else 0
+    revised_days_sum = revised_days_sum if pd.notnull(revised_days_sum) else 0
+
+    # Get previous dates for ETA calculation
+    planned_prev_date = df.loc[df['Scheduling Data'] == 'Previous Date', 'Planned Schedule'].values[0]
+    revised_prev_date = df.loc[df['Scheduling Data'] == 'Previous Date', 'Revised Schedule'].values[0]
+
+    # Calculate ETA by adding days to previous dates
+    planned_eta = planned_prev_date + pd.Timedelta(days=planned_days_sum)
+    revised_eta = revised_prev_date + pd.Timedelta(days=revised_days_sum)
+
+    # Update ETA in DataFrame
+    df.loc[df['Scheduling Data'] == 'ETA', 'Planned Schedule'] = planned_eta
+    df.loc[df['Scheduling Data'] == 'ETA', 'Revised Schedule'] = revised_eta
+
+    print(df.to_markdown(index=False))
+    return df.to_markdown(index=False)
+
+
+def analysed_pr_details(pr_numbers_list: list):
+    """
+    Loads PR_Data.csv, filters PR records matching given comma-separated PR numbers.
+    Prints a formatted table of the matching PR details.
+    Returns filtered DataFrame or None.
+    """
+
+    response_string = ""
+    try:
+        pr_df = pd.read_csv('./updated_docs/pr_data.csv', dayfirst=True)
+    except FileNotFoundError:
+        print("Error: File './updated_docs/pr_data.csv' not found.")
+        return None
+    except Exception as e:
+        print(f"Error reading the CSV file: {e}")
+        return None
+
+    expected_cols = ['PR Number', 'Requester Name', 'Request Date', 'Urgency level', 'Approval Stage',
+                     'Item Number', 'Qnty Requested', 'Estimated cost/pc with shipping', 'Total PR value',
+                     'Ship to Location', 'Requested Mode of Transport', 'Remarks']
+
+    # Check for missing columns
+    missing_cols = [col for col in expected_cols if col not in pr_df.columns]
+    if missing_cols:
+        print(f"Error: Missing columns in CSV: {missing_cols}")
+        return None
+
+    # Normalize PR Number column for case-insensitive matching
+    pr_df['PR Number'] = pr_df['PR Number'].astype(str).str.strip().str.upper()
+
+    # Convert input string into list of normalized PR numbers
+    pr_numbers = [pr.strip().upper() for pr in pr_numbers_list]
+
+    df = pd.read_csv('./updated_docs/pr_data.csv', dayfirst=True)
+    
+    # Map of original → desired column names
+    cols_to_select = {
+        "PR Number": "PR Number",
+        "Requester Name": "Req Name",
+        "Request Date": "Req Date",
+        "Urgency level": "Urgency Level",
+        "Approval Stage": "PR Approval Stage",
+        "Item Number": "Item No.",
+        "Qnty Requested": "Qty Req",
+        "Estimated cost/pc with shipping": "Estimated cost/pc with shipping",
+        "Total PR value": "Total PR Value",
+        "Ship to Location": "Ship to Location",
+        "Requested Mode of Transport": "Req Mode of Transport",
+        "Remarks": "Remarks"
+    }
+    
+    # Filter and select
+    filtered_df = df[df["PR Number"].isin(pr_numbers)]
+    result_df = (
+        filtered_df
+        .loc[:, cols_to_select.keys()]
+        .rename(columns=cols_to_select)
+    )
+
+    response_string+=f"Status of requested PRs:\n\n{result_df.to_markdown(index=False)}"
+
+    # Filter DataFrame by PR Number
+    filtered_pr_df = pr_df[pr_df['PR Number'].isin(pr_numbers)]
+
+    if filtered_pr_df.empty:
+        print("No matching records found for the provided PR number(s).")
+        return None
+    else:
+        
+        df = filtered_pr_df
+    
+    if df is None or df.empty:
+        print("No data provided for approval stage display.")
+        return None
+
+    approval_columns = [
+        'Approver Stage 1 (Manager)', 'Action date (Stage 1)',
+        'Approver Stage 2 (HOD)', 'Action date (Stage 2)',
+        'Approver Stage 3 (Commercial Manager)', 'Action date (Stage 3)'
+    ]
+
+    # Validate presence of required columns
+    missing = [col for col in approval_columns if col not in df.columns]
+    if missing:
+        print(f"Missing approval-related columns: {missing}")
+        return None
+
+    if 'Approval Stage' not in df.columns:
+        print("Missing 'Approval Stage' column in the data.")
+        return None
+
+    # Filter rows with Approval Stage in stage 1, 2 or 3 (case-insensitive)
+    pending_stages = ['stage 1', 'stage 2', 'stage 3']
+    pr_df_pending = df[df['Approval Stage'].str.lower().fillna('').isin(pending_stages)]
+
+    if pr_df_pending.empty:
+        print("No pending approval tickets (stage 1, 2, or 3).")
+        return None
+
+    # Fill NaNs with 'Pending' for display purposes
+    display_pr_df = pr_df_pending[approval_columns].fillna("Pending")
+
+    response_string+=f"\n\nPRs with pending approval is as below:\n\n{display_pr_df.to_markdown()}"
+    return response_string
+
+
+def send_reminder_email_to_approver(pr_numbers_str: str):
+    """
+    Sends a reminder email via SendGrid to the approver of the current approval stage.
+    Only sends if the approval stage is stage 1, 2, or 3.
+    """
+
+    load_dotenv()
+
+    sendgrid_api_key = os.getenv("SENDGRID_API_KEY") 
+
+    try:
+        pr_df = pd.read_csv('./updated_docs/pr_data.csv', dayfirst=True)
+    except FileNotFoundError:
+        print("Error: File './updated_docs/pr_data.csv' not found.")
+        return None
+    except Exception as e:
+        print(f"Error reading the CSV file: {e}")
+        return None
+
+    expected_cols = ['PR Number', 'Requester Name', 'Request Date','Urgency level', 'Approval Stage','Action date (Stage 1)','Action date (Stage 2)','Action date (Stage 3)',
+                     'Item Number', 'Qnty Requested', 'Estimated cost/pc with shipping', 'Total PR value',
+                     'Ship to Location', 'Requested Mode of Transport', 'Remarks']
+
+    # Check for missing columns
+    missing_cols = [col for col in expected_cols if col not in pr_df.columns]
+    if missing_cols:
+        print(f"Error: Missing columns in CSV: {missing_cols}")
+        return None
+
+    # Normalize PR Number column for case-insensitive matching
+    pr_df['PR Number'] = pr_df['PR Number'].astype(str).str.strip().str.lower()
+
+    # Convert input string into list of normalized PR numbers
+    pr_numbers = [pr.strip().lower() for pr in pr_numbers_str.split(',') if pr.strip()]
+
+    # Filter DataFrame by PR Number
+    filtered_pr_df = pr_df[pr_df['PR Number'].isin(pr_numbers)]
+
+    if filtered_pr_df.empty:
+        print("No matching records found for the provided PR number(s).")
+        return None
+    else:
+        pass
+        
+    if filtered_pr_df is not None:
+        for _, pr in filtered_pr_df.iterrows():
+
+          current_stage = pr.get('Approval Stage', '').strip().lower()
+          if current_stage not in ['stage 1', 'stage 2', 'stage 3']:
+              return
+
+          stage_email_column_map = {
+              'stage 1': 'Approver Stage 1 (Manager)',
+              'stage 2': 'Approver Stage 2 (HOD)',
+              'stage 3': 'Approver Stage 3 (Commercial Manager)'
+          }
+          approver_col = stage_email_column_map[current_stage]
+
+          # Normalize PR numbers to ensure matching
+          pr_df['PR Number'] = pr_df['PR Number'].astype(str).str.strip().str.lower()
+          pr_number = str(pr.get('PR Number', '')).strip().lower()
+
+          matching_row = pr_df[pr_df['PR Number'] == pr_number]
+
+          if matching_row.empty:
+              return f"L PR {pr_number} not found in pr_df."
+              
+
+          approver_email = matching_row.iloc[0].get(approver_col)
+          if not approver_email or pd.isna(approver_email):
+              return f"L Approver email missing for PR {pr_number} at {current_stage}."
+
+          approver_name = approver_email.split('@')[0] if '@' in approver_email else approver_email
+
+          def get_previous_stage(current_stage):
+            try:
+                prefix, num = current_stage.strip().split()
+                num = int(num)
+                if num <= 1:
+                    return "Stage 1"
+                return f"{prefix} {num - 1}".capitalize()
+            except (ValueError, AttributeError):
+                raise ValueError("Invalid stage format. Expected format like 'stage 1'")
+              
+
+          try:
+              
+              last_approval_date = pd.to_datetime(pr.get(f'Action date ({get_previous_stage(current_stage)})'), dayfirst=True)
+              req_date = pd.to_datetime(pr.get('Request Date'), dayfirst=True)
+              days_pending = (datetime.now() - last_approval_date).days
+          except Exception:
+              days_pending = "unknown"
+
+          subject = f"Reminder: Ticket {pr['PR Number'].upper()} Pending Approval at Stage {current_stage.capitalize()}"
+
+          body_html = f"""
+      <!DOCTYPE html>
+      <html lang="en">
+
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+          /* Reset and base */
+          body {{
+            margin: 0;
+            padding: 0;
+            background-color: #F9FAFB;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #1F2937;
+            line-height: 1.5;
+          }}
+
+          a {{
+            color: inherit;
+            text-decoration: none;
+          }}
+
+          .container {{
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 24px;
+          }}
+
+          .card {{
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(31, 41, 55, 0.1);
+            overflow: hidden;
+          }}
+
+          .accent-bar {{
+            height: 4px;
+            background: linear-gradient(90deg, #2563EB, #8B5CF6);
+          }}
+
+          .card-header {{
+            padding: 24px;
+          }}
+
+          .card-header h2 {{
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #4F46E5;
+          }}
+
+          .card-body {{
+            padding: 0 24px 24px;
+          }}
+
+          .card-body p {{
+            margin: 16px 0;
+            font-size: 1rem;
+            color: #374151;
+          }}
+
+          .details-table {{
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+          }}
+
+          .details-table th,
+          .details-table td {{
+            padding: 12px 16px;
+            text-align: left;
+          }}
+
+          .details-table thead th {{
+            background-color: #E0E7FF;
+            color: #4F46E5;
+            font-weight: 600;
+          }}
+
+          .details-table tbody tr {{
+            border-bottom: 1px solid #E5E7EB;
+          }}
+
+          .details-table tbody tr:nth-child(even) {{
+            background-color: #F3F4F6;
+          }}
+
+          .details-table td {{
+            color: #374151;
+            font-weight: 500;
+          }}
+
+          .footer {{
+            font-size: 0.75rem;
+            color: #9CA3AF;
+            text-align: center;
+            margin: 16px 0;
+          }}
+
+          @media (max-width: 600px) {{
+            .container {{
+              padding: 16px;
+            }}
+
+            .card-header h2 {{
+              font-size: 1.25rem;
+            }}
+
+            .details-table th,
+            .details-table td {{
+              padding: 8px 12px;
+            }}
+          }}
+        </style>
+      </head>
+
+      <body>
+        <div class="container">
+          <div class="card">
+            <div class="accent-bar"></div>
+            <div class="card-header">
+              <h2>Reminder: Approval Pending for PR #{pr['PR Number'].upper()}</h2>
+            </div>
+            <div class="card-body">
+              <p>Hello {(" ".join(approver_name.split('.')))},</p>
+
+              <p>
+                This is a gentle reminder that <strong>Purchase Requisition #{pr['PR Number'].upper()}</strong> submitted by
+                <strong>Requestor Name - {pr.get('Requester Name', 'N/A')}</strong> has been pending your approval for
+                <strong>{days_pending}</strong> days. Its status has been changed to
+                <strong style="color: #DC2626;">HIGH</strong> from MEDIUM.
+              </p>
+
+              <h3 style="color:#4F46E5; margin-top: 32px;">PR Summary:</h3>
+
+              <table class="details-table">
+                <thead>
+                  <tr>
+                    <th>Field</th>
+                    <th>Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Ticket number</td>
+                    <td>{pr['PR Number'].upper()}</td>
+                  </tr>
+                  <tr>
+                    <td>Requestor</td>
+                    <td>{pr.get('Requester Name', 'N/A')}</td>
+                  </tr>
+                  <tr>
+                    <td>Items</td>
+                    <td>{pr.get('Item Number', 'N/A')}</td>
+                  </tr>
+                  <tr>
+                    <td>Total value</td>
+                    <td>$ {pr.get('Total PR value', 'N/A')}</td>
+                  </tr>
+                  <tr>
+                    <td>Current status</td>
+                    <td>{pr.get('Urgency level', 'N/A')}</td>
+                  </tr>
+                  <tr>
+                    <td>Submitted on</td>
+                    <td>{pr.get('Request Date', 'N/A')}</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>
+                As this delay may impact delivery timelines, please review and take appropriate action at your earliest
+                convenience.
+              </p>
+
+              <p>Best regards,<br>Your Procurement Team</p>
+
+              <p class="footer">This is an automated reminder from ProcureWise AI. Please do not reply to this email.</p>
+            </div>
+          </div>
+        </div>
+      </body>
+
+      </html>
+
+          """
+
+          message = Mail(
+              from_email="manish.rajput001@gmail.com",
+              to_emails="nithin.code1@gmail.com",
+              subject=subject,
+              html_content=body_html
+          )
+
+          try:
+              sg = SendGridAPIClient(sendgrid_api_key)
+              response = sg.send(message)
+              if response.status_code in [200, 202]:
+                  print(f"✅ Email successfully sent to nithin.code1@gmail.com\n[Original Approver: {approver_email}] for ticket {pr['PR Number'].upper()}.\nLet me know if you want me to check schedule changes for this PR")
+                  return f"✅ Email successfully sent to nithin.code1@gmail.com\n[Original Approver: {approver_email}] for ticket {pr['PR Number'].upper()}\nLet me know if you want me to check schedule changes for this PR"
+              else:
+                  return f"❌ Failed to send email for ticket {pr['PR Number']}: Status {response.status_code}"
+          except Exception as e:
+              return f"❌ Error sending email for ticket {pr['PR Number']}: {e}"
+
+def clear_images(folder_path = "./updated_docs/pdf_store"):
+    """
+    Delete all PDF files in the specified folder (non-recursive).
+
+    :param folder_path: Path to the folder whose PDFs you want to delete.
+    """
+    folder = Path(folder_path)
+    if not folder.is_dir():
+        raise ValueError(f"{folder_path!r} is not a valid directory.")
+
+    for pdf in folder.glob("*.png"):
+        try:
+            pdf.unlink()  # delete the file
+            print(f"Deleted: {pdf.name}")
+        except Exception as e:
+            print(f"Failed to delete {pdf.name}: {e}")
