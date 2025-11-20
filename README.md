@@ -58,8 +58,49 @@ npm install
 | `Frontend/app/`               | Next.js pages (dashboard, chat, alerts)            |
 | `Frontend/components/`        | UI components (charts, tables, chat window)        |
 
+## 📧 SendGrid Email Setup (PR Alerts)
+
+To receive PR (Purchase Requisition) emails via SendGrid Inbound Parse:
+
+### 1. Configure SendGrid Inbound Parse
+
+1. **Login to SendGrid Dashboard** → Go to **Settings** → **Inbound Parse**
+2. **Add a new hostname** (or use existing):
+
+   - Hostname: `pr.yourdomain.com` (or your preferred subdomain)
+   - **POST URL**: `https://your-domain.com/sendgrid-webhook`
+     - For local testing: Use a service like [ngrok](https://ngrok.com/) to expose `http://localhost:8001/sendgrid-webhook`
+
+
+3. **Update DNS Records**:
+   - Add the MX record provided by SendGrid to your domain's DNS settings
+   - This routes emails to SendGrid's servers
+
+### 2. Environment Variables
+
+Ensure your `.env` file includes:
+
+```env
+SENDGRID_API_KEY=your_sendgrid_api_key_here
+```
+
+### 3. Testing
+
+- Send a test email to `pr@yourdomain.com` (or your configured email)
+- The email will be automatically processed and saved to `code/updated_docs/pr_folders/pr_extractions/pr_ext.json`
+- Query "Check email for PR Request" in the chat interface to view received emails
+
+### 4. Webhook Endpoint
+
+The webhook endpoint is available at:
+
+- **POST** `/sendgrid-webhook`
+- Accepts SendGrid Inbound Parse form data
+- Automatically processes and saves PR emails
+
 ## 📋 Notes
 
 - Keep API keys (OpenAI, SendGrid) in `.env` (not in version control)
 - Update CSVs in `code/updated_docs/` to refresh analytics
 - Windows users: Use `start.bat` or Developer PowerShell
+- PR emails are stored in JSON format at `code/updated_docs/pr_folders/pr_extractions/pr_ext.json`

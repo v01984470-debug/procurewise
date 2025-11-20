@@ -2426,8 +2426,8 @@ def send_reminder_email_to_approver(pr_numbers_str: str):
           """
 
           message = Mail(
-              from_email="manish.rajput001@gmail.com",
-              to_emails="nithin.code1@gmail.com",
+              from_email="santosh.selvam@gmail.com",
+              to_emails=approver_email,
               subject=subject,
               html_content=body_html
           )
@@ -2436,8 +2436,8 @@ def send_reminder_email_to_approver(pr_numbers_str: str):
               sg = SendGridAPIClient(sendgrid_api_key)
               response = sg.send(message)
               if response.status_code in [200, 202]:
-                  print(f"✅ Email successfully sent to nithin.code1@gmail.com\n[Original Approver: {approver_email}] for ticket {pr['PR Number'].upper()}.\nLet me know if you want me to check schedule changes for this PR")
-                  return f"✅ Email successfully sent to nithin.code1@gmail.com\n[Original Approver: {approver_email}] for ticket {pr['PR Number'].upper()}\nLet me know if you want me to check schedule changes for this PR"
+                  print(f"✅ Email successfully sent to {approver_email} for ticket {pr['PR Number'].upper()}.\nLet me know if you want me to check schedule changes for this PR")
+                  return f"✅ Email successfully sent to {approver_email} for ticket {pr['PR Number'].upper()}\nLet me know if you want me to check schedule changes for this PR"
               else:
                   return f"❌ Failed to send email for ticket {pr['PR Number']}: Status {response.status_code}"
           except Exception as e:

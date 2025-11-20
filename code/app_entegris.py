@@ -2,7 +2,7 @@ from sendgrid.helpers.mail import Mail
 from sendgrid import SendGridAPIClient
 import json
 import time
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
@@ -497,6 +497,14 @@ prompt = PromptTemplate(
         Q: Yes, go ahead and send a reminder.
         
         Select: send_pr_reminder_email_workflow()
+        
+        Q: Yes, go ahead and send a reminder [for PR].
+        
+        Select: send_pr_reminder_email_workflow()
+        
+        Q: Send reminder email for PR-103101
+        
+        Select: send_pr_reminder_email_workflow()
 
         Q: Check schedule changes for this PR
         
@@ -604,23 +612,126 @@ def supplier_analysis(request: SupplierQuery):
             print("Failed to clear PDFs:", cleanup_err)
 
 
+def save_pr_email_to_json(email_data: dict):
+    """
+    Save processed PR email to JSON file.
+    Creates the file if it doesn't exist, or appends to existing file.
+    """
+    json_path = "./updated_docs/pr_folders/pr_extractions/pr_ext.json"
+    os.makedirs(os.path.dirname(json_path), exist_ok=True)
+
+    try:
+        # Try to read existing data
+        if os.path.exists(json_path):
+            with open(json_path, 'r', encoding='utf-8') as f:
+                existing_data = json.load(f)
+                if not isinstance(existing_data, list):
+                    existing_data = [existing_data]
+        else:
+            existing_data = []
+
+        # Add new email data at the beginning (most recent first)
+        existing_data.insert(0, email_data)
+
+        # Keep only last 50 emails to prevent file from growing too large
+        existing_data = existing_data[:50]
+
+        # Write back to file
+        with open(json_path, 'w', encoding='utf-8') as f:
+            json.dump(existing_data, f, indent=2, ensure_ascii=False)
+
+        return True
+    except Exception as e:
+        print(f"Error saving PR email to JSON: {e}")
+        return False
+
+
+def process_incoming_email(subject: str, body: str, from_email: str, to_email: str, date: str = None):
+    """
+    Process incoming email and extract PR-related information.
+    Returns a structured dictionary with email details.
+    """
+    if date is None:
+        date = datetime.now().isoformat()
+
+    # Clean HTML from body if present
+    import re
+    # Remove HTML tags
+    clean_body = re.sub(r'<[^>]+>', '', body)
+    # Decode HTML entities
+    clean_body = clean_body.replace('&nbsp;', ' ').replace(
+        '&amp;', '&').replace('&lt;', '<').replace('&gt;', '>')
+    # Remove extra whitespace
+    clean_body = ' '.join(clean_body.split())
+
+    email_data = {
+        "subject": subject,
+        "body": clean_body,
+        "html_body": body,  # Keep original HTML for reference
+        "from": from_email,
+        "to": to_email,
+        "date": date,
+        "processed_at": datetime.now().isoformat()
+    }
+
+    return email_data
+
+
 def fetch_pr_emails():
+    """
+    Fetch PR emails from the JSON file.
+    Returns formatted string with email details, or error message if no emails found.
+    """
+    json_path = "./updated_docs/pr_folders/pr_extractions/pr_ext.json"
 
-    with open("./updated_docs/pr_folders/pr_extractions/pr_ext.json", 'r') as f:
-        text = json.load(f)
+    try:
+        if not os.path.exists(json_path):
+            return "No PR emails have been received yet. Emails will appear here once they are received via SendGrid webhook."
 
-    return_string = f"""
+        with open(json_path, 'r', encoding='utf-8') as f:
+            text = json.load(f)
+
+        if not text:
+            return "No PR emails found in the system."
+
+        # Handle both list and single dict formats
+        if isinstance(text, list):
+            emails = text
+        else:
+            emails = [text]
+
+        if not emails:
+            return "No PR emails found in the system."
+
+        # Format the most recent email (first in list)
+        latest_email = emails[0]
+
+        # Extract clean body (remove HTML if present)
+        body = latest_email.get('body', latest_email.get('html_body', ''))
+        if '<div dir=' in body:
+            body = body.split("<div dir=")[0]
+
+        return_string = f"""
     # Email received from plant official to Procurement Team:
 
-    ## Subject: {text[0]["subject"]}
+    ## Subject: {latest_email.get('subject', 'No Subject')}
+    
+    ## From: {latest_email.get('from', 'Unknown Sender')}
+    
+    ## Date: {latest_email.get('date', 'Unknown Date')}
     
     ## Body:
 
-    {text[0]['body'].split("<div dir=")[0]}
+    {body}
 
     """
 
-    return return_string
+        return return_string
+
+    except json.JSONDecodeError as e:
+        return f"Error reading PR email data: Invalid JSON format. {str(e)}"
+    except Exception as e:
+        return f"Error fetching PR emails: {str(e)}"
 
 
 def send_email_workflow(orchestration_mssg: list, query: str, chat_summary: str):
@@ -3138,7 +3249,9 @@ def send_pr_reminder_email_workflow(orchestration_mssg: list, query: str, chat_s
 
             Format should be matched exactly.
 
-            Make use of Tool: **send_reminder_email_to_approver** to send reminder.
+            **CRITICAL**: Make use of Tool: **send_reminder_email_to_approver** to send reminder. 
+            DO NOT use email_sending_tool - that is for PO (Purchase Order) emails only. 
+            You MUST use send_reminder_email_to_approver for PR (Purchase Requisition) reminders.
             """,
         )
 
@@ -3926,3 +4039,96 @@ def panama_canal_analysis(request: PanamaCanalQuery):
 @app.get("/health", status_code=200)
 def health():
     return JSONResponse(content={"status": "ok"})
+
+
+@app.post("/sendgrid-webhook")
+async def sendgrid_webhook(request: Request):
+    """
+    SendGrid Inbound Parse webhook endpoint to receive PR emails.
+
+    SendGrid Inbound Parse sends emails as form data with the following fields:
+    - headers: Email headers
+    - text: Plain text body
+    - html: HTML body
+    - from: Sender email
+    - to: Recipient email
+    - subject: Email subject
+    - envelope: SMTP envelope information
+    - charsets: Character encoding information
+    - SPF: SPF verification result
+
+    To set up SendGrid Inbound Parse:
+    1. Go to SendGrid Dashboard > Settings > Inbound Parse
+    2. Add a new hostname or use existing
+    3. Set POST URL to: https://your-domain.com/sendgrid-webhook
+    4. Configure spam check and other settings as needed
+    5. Update your domain's MX records as instructed by SendGrid
+    """
+    try:
+        # Get form data from request
+        form_data = await request.form()
+
+        # Extract email details
+        subject = form_data.get("subject", "No Subject")
+        from_email = form_data.get("from", "unknown@example.com")
+        to_email = form_data.get("to", "unknown@example.com")
+
+        # Get email body (prefer HTML, fallback to text)
+        html_body = form_data.get("html", "")
+        text_body = form_data.get("text", "")
+        body = html_body if html_body else text_body
+
+        # Get date from headers if available
+        headers = form_data.get("headers", "")
+        date = None
+        if headers:
+            # Try to extract date from headers
+            import re
+            date_match = re.search(r'Date:\s*(.+)', headers, re.IGNORECASE)
+            if date_match:
+                date = date_match.group(1).strip()
+
+        # Process and save the email
+        email_data = process_incoming_email(
+            subject=subject,
+            body=body,
+            from_email=from_email,
+            to_email=to_email,
+            date=date
+        )
+
+        # Save to JSON file
+        success = save_pr_email_to_json(email_data)
+
+        if success:
+            print(
+                f"✅ PR email received and saved: {subject} from {from_email}")
+            return JSONResponse(
+                content={
+                    "status": "success",
+                    "message": "Email received and processed",
+                    "subject": subject,
+                    "from": from_email
+                },
+                status_code=200
+            )
+        else:
+            print(f"❌ Failed to save PR email: {subject} from {from_email}")
+            return JSONResponse(
+                content={
+                    "status": "error",
+                    "message": "Email received but failed to save"
+                },
+                status_code=500
+            )
+
+    except Exception as e:
+        print(f"❌ Error processing SendGrid webhook: {str(e)}")
+        # Still return 200 to SendGrid to prevent retries for malformed requests
+        return JSONResponse(
+            content={
+                "status": "error",
+                "message": f"Error processing email: {str(e)}"
+            },
+            status_code=200
+        )
